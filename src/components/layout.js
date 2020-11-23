@@ -17,13 +17,21 @@ const MainContentContainer = styled.div`
   margin: 0 10em;
   display: flex;
   flex-direction: column;
-  height: 90vh;
   padding: 0 1.0875rem 1.45rem;
+
+  @media (max-width: 670px) {
+    margin: 0 2em;
+  }
 `;
 
 const Line = styled.div`
   border-top: 1px solid black;
   margin: 0 10em 3em 10em;
+`;
+
+const Footer = styled.footer`
+  margin-top: 2rem;
+  text-align: center;
 `;
 
 const Layout = ({ children }) => {
@@ -43,13 +51,13 @@ const Layout = ({ children }) => {
       <Line />
       <MainContentContainer>
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
+        <Footer>
+          © {new Date().getFullYear()} Paul Choi <br></br>Built with: <br></br>
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+          <a href="https://reactjs.org/">React</a>
+          <a href="https://graphql.org/">GraphQL</a>
+        </Footer>
       </MainContentContainer>
     </>
   )

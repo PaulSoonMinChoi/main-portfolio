@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import './header.css'
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -10,6 +10,16 @@ import ReactTooltip from 'react-tooltip';
 
 library.add(fab);
 
+const animationFrames = keyframes`
+  0% {
+    opacity:0;
+    transform:  translate(-10px,-45px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+`;
 
 const MainHeader = styled.header`
   display: flex;
@@ -29,10 +39,16 @@ const IconContainer = styled.div`
   justify-content: center;
 `;
 
+const Icon = styled.a`
+  color: inherit;
+  animation: ${animationFrames} ${(props) => props.time ? props.time : 0}s ease;
+`;
+
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  animation: ${animationFrames} 2s ease;
 `;
 
 const CharDiv = styled.div`
@@ -137,10 +153,16 @@ const Header = ({ siteTitle }) => {
           </Link>
         </h1>
         <IconContainer>
-          <FontAwesomeIcon className='social-icons' icon={["fab",
-          "github"]} size="2x"/>
-          <FontAwesomeIcon className='social-icons' icon={['fab', 'linkedin']} size="2x"/>
-          <FontAwesomeIcon className='social-icons' icon={['fab', 'instagram']} size="2x"/>
+          <Icon time={3} href="https://github.com/PaulSoonMinChoi" target="_blank" >
+            <FontAwesomeIcon className='social-icons' icon={["fab",
+            "github"]} size="2x"/>
+          </Icon>
+          <Icon time={4} href="https://www.linkedin.com/in/paulsoonminchoi/" target="_blank" >
+            <FontAwesomeIcon className='social-icons' icon={['fab', 'linkedin']} size="2x"/>
+          </Icon>
+          <Icon time={5} href="https://www.instagram.com/paulchoiiii/" target="_blank" >
+            <FontAwesomeIcon className='social-icons' icon={['fab', 'instagram']} size="2x"/>
+          </Icon>
         </IconContainer>
       </HeaderDiv>
     </MainHeader>

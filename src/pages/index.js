@@ -5,13 +5,15 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import AboutUs from "../components/about"
+import Skills from "../components/skills"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <AboutUs />
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <Skills />
+    {/* <Link to="/page-2/">Go to page 2</Link> <br />
+    <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
   </Layout>
 )
 
