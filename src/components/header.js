@@ -55,6 +55,10 @@ const CharDiv = styled.div`
   opacity: ${props => props.active === props.char ? 1.5 : 0.75 };
 `;
 
+const Char = styled.p`
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+`;
+
 const Header = ({ siteTitle }) => {
 
   const [hovering, setHovering] = useState('');
@@ -84,7 +88,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'P') {
                 return (
                   <CharDiv active={hovering} char={'P'}>
-                    <p className='title-char' onMouseOver={() => charHover('P')} onMouseLeave={() => setHovering('')} data-effect="solid" data-tip="Problem solver">P</p>
+                    <Char className='title-char' onMouseOver={() => charHover('P')} onMouseLeave={() => setHovering('')} data-effect="solid" data-tip="Problem solver">P</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -92,7 +96,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'a') {
                 return (
                   <CharDiv active={hovering} char={'A'}>
-                    <p className='title-char' onMouseOver={() => charHover('A')} onMouseLeave={() => setHovering('')} data-tip="Assertive"  data-effect="solid">A</p>
+                    <Char className='title-char' onMouseOver={() => charHover('A')} onMouseLeave={() => setHovering('')} data-tip="Assertive"  data-effect="solid">A</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -100,7 +104,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'u') {
                 return (
                   <CharDiv active={hovering} char={'U'}>
-                    <p className='title-char' onMouseOver={() => charHover('U')} onMouseLeave={() => setHovering('')} data-tip="Understanding"  data-effect="solid">U</p>
+                    <Char className='title-char' onMouseOver={() => charHover('U')} onMouseLeave={() => setHovering('')} data-tip="Understanding"  data-effect="solid">U</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -108,7 +112,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'l') {
                 return (
                   <CharDiv active={hovering} char={'L'}>
-                    <p className='title-char' onMouseOver={() => charHover('L')} onMouseLeave={() => setHovering('')} data-tip="Leadership"  data-effect="solid">L</p>
+                    <Char className='title-char' onMouseOver={() => charHover('L')} onMouseLeave={() => setHovering('')} data-tip="Leadership"  data-effect="solid">L</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -116,7 +120,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'C') {
                 return (
                   <CharDiv active={hovering} char={'C'}>
-                    <p className='title-char-last' data-tip="Communication"  onMouseOver={() => charHover('C')} onMouseLeave={() => setHovering('')} data-effect="solid">C</p>
+                    <Char className='title-char-last' data-tip="Communication"  onMouseOver={() => charHover('C')} onMouseLeave={() => setHovering('')} data-effect="solid">C</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -124,7 +128,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'h') {
                 return (
                   <CharDiv active={hovering} char={'H'}>
-                    <p className='title-char-last' onMouseOver={() => charHover('H')} onMouseLeave={() => setHovering('')} data-tip="Honorable"  data-effect="solid">H</p>
+                    <Char className='title-char-last' onMouseOver={() => charHover('H')} onMouseLeave={() => setHovering('')} data-tip="Honorable"  data-effect="solid">H</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -132,7 +136,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'o') {
                 return (
                   <CharDiv active={hovering} char={'O'}>
-                    <p className='title-char-last' onMouseOver={() => charHover('O')} onMouseLeave={() => setHovering('')} data-tip="Organized"  data-effect="solid">O</p>
+                    <Char className='title-char-last' onMouseOver={() => charHover('O')} onMouseLeave={() => setHovering('')} data-tip="Organized"  data-effect="solid">O</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )
@@ -140,7 +144,7 @@ const Header = ({ siteTitle }) => {
               if (char === 'i') {
                 return (
                   <CharDiv active={hovering} char={'I'}>
-                    <p className='title-char-last' data-tip="Interested"  onMouseOver={() => charHover('I')} onMouseLeave={() => setHovering('')} data-effect="solid">I</p>
+                    <Char className='title-char-last' data-tip="Interested"  onMouseOver={() => charHover('I')} onMouseLeave={() => setHovering('')} data-effect="solid">I</Char>
                     <ReactTooltip />
                   </CharDiv>
                 )

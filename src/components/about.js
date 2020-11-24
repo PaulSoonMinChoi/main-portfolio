@@ -14,16 +14,21 @@ const animationFrames2 = keyframes`
 `;
 
 const MainContainer = styled.div`
-  // margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 250px;
-  height: 70vh;
+  height: 80vh;
   align-items: center;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1000px)  {
     flex-direction: column;
+    height: 80vh;
     gap: 50px;
+  }
+
+  @media (max-width: 1090px) and (min-width: 1000px) {
+    height: 110vh;
+    gap: 200px;
   }
 `;
 
@@ -52,6 +57,11 @@ const AboutUsContentContainer = styled.div`
 
 const AboutUsIntro = styled.h3`
   color: rgb(30, 97, 97);
+  line-height: 40px;
+`;
+
+const Paragraph = styled.p`
+  line-height: 40px;
 `;
 
 
@@ -63,14 +73,14 @@ const AboutUs = () => {
         <AboutUsIntro>
           Hi. I'm Paul, a full stack software engineer living in California. I bring innovative ideas to life with design and code.
         </AboutUsIntro>
-        <p>
+        <Paragraph>
           In my work I strive to bring real change and joy while maintaining usability and structure.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           Currently I'm looking for a full time software engineering based role. In addition I am working on
           a side project called <Link style={{color: 'blue'}} to="/blu">Blu</Link> which allows gamers to connect with other
           gamers for better online multiplayer experiences.
-        </p>
+        </Paragraph>
       </AboutUsContentContainer>
     </MainContainer>
   )

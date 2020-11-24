@@ -14,16 +14,21 @@ const animationFrames2 = keyframes`
 `;
 
 const MainContainer = styled.div`
-  // margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 250px;
-  height: 70vh;
+  gap: 280px;
+  height: 120vh;
   align-items: center;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     gap: 50px;
+    margin: 4em 0;
+  }
+
+  @media (max-width: 1200px) and (min-width: 1000px) {
+    height: 200vh;
+    gap: 160px;
   }
 `;
 
@@ -47,7 +52,6 @@ const AboutUsContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 800px;
 `;
 
 const SkillsSectionContainer = styled.div`
@@ -58,8 +62,8 @@ const SkillsSectionContainer = styled.div`
 
 const SkillsSection = styled.div`
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  // align-items: center;
 `;
 
 const SkillsTitle = styled.h3`
@@ -73,6 +77,12 @@ const SkillsEntry = styled.h4`
   }
 `;
 
+const SkillsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+`;
+
 
 const Skills = () => {
   return (
@@ -81,53 +91,69 @@ const Skills = () => {
       <AboutUsContentContainer>
         <SkillsSectionContainer>
           <SkillsSection>
-            <SkillsTitle>
-              Front-End:
-            </SkillsTitle>
-            <SkillsEntry>React Native</SkillsEntry>
-            <SkillsEntry>ReactJS</SkillsEntry>
-            <SkillsEntry>jQuery</SkillsEntry>
-            <SkillsEntry>HTML5</SkillsEntry>
-            <SkillsEntry>CSS3</SkillsEntry>
-            <SkillsEntry>Cloud Firestore</SkillsEntry>
-            <SkillsEntry>Redux</SkillsEntry>
+            <div>
+              <SkillsTitle>
+                Front-End:
+              </SkillsTitle>
+            </div>
+            <SkillsList>
+              <SkillsEntry>React Native</SkillsEntry>
+              <SkillsEntry>ReactJS</SkillsEntry>
+              <SkillsEntry>jQuery</SkillsEntry>
+              <SkillsEntry>HTML5</SkillsEntry>
+              <SkillsEntry>CSS3</SkillsEntry>
+              <SkillsEntry>Cloud Firestore</SkillsEntry>
+              <SkillsEntry>Redux</SkillsEntry>
+            </SkillsList>
           </SkillsSection>
           <SkillsSection>
-            <SkillsTitle>
-              Back-End:
-            </SkillsTitle>
-            <SkillsEntry>Node.js</SkillsEntry>
-            <SkillsEntry>Express</SkillsEntry>
-            <SkillsEntry>mySQL</SkillsEntry>
-            <SkillsEntry>Sequelize</SkillsEntry>
-            <SkillsEntry>MongoDB</SkillsEntry>
-            <SkillsEntry>Mongoose</SkillsEntry>
-            <SkillsEntry>PostgreSQL</SkillsEntry>
-            <SkillsEntry>RESTful APIs</SkillsEntry>
+            <div>
+              <SkillsTitle>
+                Back-End:
+              </SkillsTitle>
+            </div>
+            <SkillsList>
+              <SkillsEntry>Node.js</SkillsEntry>
+              <SkillsEntry>Express</SkillsEntry>
+              <SkillsEntry>mySQL</SkillsEntry>
+              <SkillsEntry>Sequelize</SkillsEntry>
+              <SkillsEntry>MongoDB</SkillsEntry>
+              <SkillsEntry>Mongoose</SkillsEntry>
+              <SkillsEntry>PostgreSQL</SkillsEntry>
+              <SkillsEntry>RESTful APIs</SkillsEntry>
+            </SkillsList>
           </SkillsSection>
           <SkillsSection>
-            <SkillsTitle>
-            Deployment &<br></br> Testing:
-            </SkillsTitle>
-            <SkillsEntry>Gatsby</SkillsEntry>
-            <SkillsEntry>NGINX</SkillsEntry>
-            <SkillsEntry>Loader.io</SkillsEntry>
-            <SkillsEntry>K6</SkillsEntry>
-            <SkillsEntry>Artillery.io</SkillsEntry>
-            <SkillsEntry>New Relic</SkillsEntry>
-            <SkillsEntry>AWS EC2</SkillsEntry>
-            <SkillsEntry>Enzyme</SkillsEntry>
-            <SkillsEntry>Jest</SkillsEntry>
+            <div>
+              <SkillsTitle>
+              Deployment & Testing:
+              </SkillsTitle>
+            </div>
+            <SkillsList>
+              <SkillsEntry>Gatsby</SkillsEntry>
+              <SkillsEntry>NGINX</SkillsEntry>
+              <SkillsEntry>Loader.io</SkillsEntry>
+              <SkillsEntry>K6</SkillsEntry>
+              <SkillsEntry>Artillery.io</SkillsEntry>
+              <SkillsEntry>New Relic</SkillsEntry>
+              <SkillsEntry>AWS EC2</SkillsEntry>
+              <SkillsEntry>Enzyme</SkillsEntry>
+              <SkillsEntry>Jest</SkillsEntry>
+            </SkillsList>
           </SkillsSection>
           <SkillsSection>
-            <SkillsTitle>
-              Developer Tools:
-            </SkillsTitle>
-            <SkillsEntry>Npm</SkillsEntry>
-            <SkillsEntry>Git</SkillsEntry>
-            <SkillsEntry>Axios</SkillsEntry>
-            <SkillsEntry>Webpack</SkillsEntry>
-            <SkillsEntry>Babel</SkillsEntry>
+            <div>
+              <SkillsTitle>
+                Developer Tools:
+              </SkillsTitle>
+            </div>
+            <SkillsList>
+              <SkillsEntry>Npm</SkillsEntry>
+              <SkillsEntry>Git</SkillsEntry>
+              <SkillsEntry>Axios</SkillsEntry>
+              <SkillsEntry>Webpack</SkillsEntry>
+              <SkillsEntry>Babel</SkillsEntry>
+            </SkillsList>
           </SkillsSection>
         </SkillsSectionContainer>
       </AboutUsContentContainer>
