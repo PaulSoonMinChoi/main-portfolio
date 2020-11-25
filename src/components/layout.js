@@ -113,7 +113,10 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     }
   }
 
-  window.addEventListener('scroll', changeBackground);
+  if (typeof window !== `undefined`) {
+    // const module = require("module")
+    window.addEventListener('scroll', changeBackground);
+  }
   // document.getElementsByClassName('aboutus-section').scrollIntoView()
   return (
     <>
