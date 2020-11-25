@@ -94,15 +94,6 @@ const NavbarItems = styled.p`
 
 const Layout = ({ children, siteTitle, subTitle }) => {
 
-  const [hasMounted, setHasMounted] = React.useState(false);
-  React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -113,7 +104,16 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     }
   `)
 
+  const [hasMounted, setHasMounted] = useState(false);
   const [navbar, setNavbar] = useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
 
   const changeBackground = () => {
     if (window.scrollY >= 750) {
