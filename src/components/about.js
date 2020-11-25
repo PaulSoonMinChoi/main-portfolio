@@ -30,14 +30,19 @@ const MainContainer = styled.div`
     height: 110vh;
     gap: 200px;
   }
+
+  @media (max-width: 375px) {
+    height: 120vh;
+  }
 `;
 
 const Title = styled.h1`
   color: rgb(30, 97, 97);
-  border-top: 1px solid black;
-  max-width: 142px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 30%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
@@ -45,6 +50,7 @@ const Title = styled.h1`
   @media (max-width: 1000px) {
     text-align: center;
     max-width: 100%;
+    width: 60%;
   }
 `;
 
@@ -64,11 +70,16 @@ const Paragraph = styled.p`
   line-height: 40px;
 `;
 
+const Span = styled.span`
+  background: rgb(239 239 239);
+  padding: 0 10px;
+`;
+
 
 const AboutUs = () => {
   return (
-    <MainContainer>
-      <Title>About</Title>
+    <MainContainer className="aboutus-section" >
+      <Title><Span>About</Span></Title>
       <AboutUsContentContainer>
         <AboutUsIntro>
           Hi. I'm Paul, a full stack software engineer living in California. I bring innovative ideas to life with design and code.

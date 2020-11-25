@@ -21,7 +21,7 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 250px;
-  height: 120vh;
+  height: 160vh;
   align-items: center;
 
   @media (max-width: 1000px) {
@@ -35,14 +35,20 @@ const MainContainer = styled.div`
     margin-bottom: 15em;
     gap: 150px;
   }
+
+  @media (max-width: 375px) {
+    height: 245vh;
+    margin: 0;
+  }
 `;
 
 const Title = styled.h1`
   color: rgb(30, 97, 97);
-  border-top: 1px solid black;
-  max-width: 142px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 30%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
@@ -50,6 +56,7 @@ const Title = styled.h1`
   @media (max-width: 1000px) {
     text-align: center;
     max-width: 100%;
+    width: 60%;
   }
 `;
 
@@ -57,6 +64,10 @@ const MainWorkContainer = styled.div`
   display: flex;
   gap: 60px;
   align-items: center;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 `;
 
 const WorkContainer = styled.div`
@@ -86,11 +97,15 @@ const Img = styled.img`
   width: 140px;
 `;
 
+const Span = styled.span`
+  background: rgb(239 239 239);
+  padding: 0 10px;
+`;
 
 const Work = () => {
   return (
     <MainContainer>
-      <Title>Work</Title>
+      <Title><Span>Work</Span></Title>
       <WorkList>
         <MainWorkContainer>
           <Img src={BluLogo} alt="BluLogo"/>

@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import FECPage from "../components/FECPage"
 
 const FEC = () => (
-  <Layout>
+  <Layout siteTitle={`Getsy, Etsy E-Commerce Clone`} subTitle={`"How do you replicate a module heavy website to perfection?"`} >
     <SEO title="FEC Application" />
     <FECPage />
   </Layout>

@@ -13,11 +13,33 @@ const animationFrames2 = keyframes`
   }
 `;
 
+const hvrbob = keyframes`
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+`;
+
+const hvrbobfloat = keyframes`
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+`;
+
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 280px;
-  height: 120vh;
+  height: 130vh;
   align-items: center;
 
   @media (max-width: 1000px) {
@@ -30,14 +52,20 @@ const MainContainer = styled.div`
     height: 200vh;
     gap: 160px;
   }
+
+  @media (max-width: 375px) {
+    height: 200vh;
+    margin: 0;
+  }
 `;
 
 const Title = styled.h1`
   color: rgb(30, 97, 97);
-  border-top: 1px solid black;
-  max-width: 140px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 30%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
@@ -45,6 +73,7 @@ const Title = styled.h1`
   @media (max-width: 1000px) {
     text-align: center;
     max-width: 100%;
+    width: 60%;
   }
 `;
 
@@ -71,9 +100,31 @@ const SkillsTitle = styled.h3`
 `;
 
 const SkillsEntry = styled.h4`
+  // background-image: linear-gradient(to right, rgb(71, 158, 158), rgb(146, 185, 185));
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   &:hover {
     cursor: pointer;
     color: rgb(30, 97, 97);
+    -webkit-animation-name: ${hvrbobfloat}, ${hvrbob};
+    animation-name: ${hvrbobfloat}, ${hvrbob};
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
   }
 `;
 
@@ -83,11 +134,16 @@ const SkillsList = styled.div`
   gap: 40px;
 `;
 
+const Span = styled.span`
+  background: rgb(239 239 239);
+  padding: 0 10px;
+`;
+
 
 const Skills = () => {
   return (
     <MainContainer>
-      <Title>Skills</Title>
+      <Title><Span>Skills</Span></Title>
       <AboutUsContentContainer>
         <SkillsSectionContainer>
           <SkillsSection>

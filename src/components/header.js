@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import ReactTooltip from 'react-tooltip';
+import CoolBG from '../images/coolbg.png'
 
 library.add(fab);
 
@@ -25,12 +26,17 @@ const MainHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 80vh;
+  // background-image: url(${CoolBG});
 `;
 
 const HeaderDiv = styled.div`
   margin: 0 auto;
   maxWidth: 960;
   padding: 1.45rem 1.0875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const IconContainer = styled.div`
@@ -52,119 +58,71 @@ const TitleContainer = styled.div`
 `;
 
 const CharDiv = styled.div`
-  opacity: ${props => props.active === props.char ? 1.5 : 0.75 };
+  opacity: 0.90;
+  cursor: pointer;
+  &:hover {
+    opacity: 1.5;
+  }
 `;
 
 const Char = styled.p`
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
 `;
 
-const Header = ({ siteTitle }) => {
+const SubTitleDiv = styled.div`
+  animation: ${animationFrames} 2s ease;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+`;
 
-  const [hovering, setHovering] = useState('');
+const Opening = styled.div`
+  height: 90vh;
+  background-color: lightblue;
+`;
 
-  const charHover = (char) => {
-    setHovering(char);
-  }
+const HeaderLine = styled.h1`
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+`;
 
-  const dimTitle = () => {
+const Span = styled.span`
+  background: rgb(239 239 239);
+  padding: 0 10px;
+`;
 
-  }
+const Header = ({ siteTitle, subTitle }) => {
 
   const titleArr = siteTitle.split('');
   return (
     <MainHeader>
       <HeaderDiv>
         <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `black`,
-              textDecoration: `none`,
-            }}
-          >
-            <TitleContainer >
-              {titleArr.map((char) => {
-              if (char === 'P') {
-                return (
-                  <CharDiv active={hovering} char={'P'}>
-                    <Char className='title-char' onMouseOver={() => charHover('P')} onMouseLeave={() => setHovering('')} data-effect="solid" data-tip="Problem solver">P</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'a') {
-                return (
-                  <CharDiv active={hovering} char={'A'}>
-                    <Char className='title-char' onMouseOver={() => charHover('A')} onMouseLeave={() => setHovering('')} data-tip="Assertive"  data-effect="solid">A</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'u') {
-                return (
-                  <CharDiv active={hovering} char={'U'}>
-                    <Char className='title-char' onMouseOver={() => charHover('U')} onMouseLeave={() => setHovering('')} data-tip="Understanding"  data-effect="solid">U</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'l') {
-                return (
-                  <CharDiv active={hovering} char={'L'}>
-                    <Char className='title-char' onMouseOver={() => charHover('L')} onMouseLeave={() => setHovering('')} data-tip="Leadership"  data-effect="solid">L</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'C') {
-                return (
-                  <CharDiv active={hovering} char={'C'}>
-                    <Char className='title-char-last' data-tip="Communication"  onMouseOver={() => charHover('C')} onMouseLeave={() => setHovering('')} data-effect="solid">C</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'h') {
-                return (
-                  <CharDiv active={hovering} char={'H'}>
-                    <Char className='title-char-last' onMouseOver={() => charHover('H')} onMouseLeave={() => setHovering('')} data-tip="Honorable"  data-effect="solid">H</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'o') {
-                return (
-                  <CharDiv active={hovering} char={'O'}>
-                    <Char className='title-char-last' onMouseOver={() => charHover('O')} onMouseLeave={() => setHovering('')} data-tip="Organized"  data-effect="solid">O</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
-              if (char === 'i') {
-                return (
-                  <CharDiv active={hovering} char={'I'}>
-                    <Char className='title-char-last' data-tip="Interested"  onMouseOver={() => charHover('I')} onMouseLeave={() => setHovering('')} data-effect="solid">I</Char>
-                    <ReactTooltip />
-                  </CharDiv>
-                )
-              }
+          <TitleContainer >
+            {titleArr.map((char) => {
               return (
-                <div></div>
+                <CharDiv>
+                  <Char className='title-char' data-effect="solid" data-tip="Problem solver">{char}</Char>
+                </CharDiv>
               )
-            })}
-            </TitleContainer>
-          </Link>
+          })}
+          </TitleContainer>
         </h1>
+          <SubTitleDiv><Span>{subTitle}</Span></SubTitleDiv>
         <IconContainer>
           <Icon time={3} href="https://github.com/PaulSoonMinChoi" target="_blank" >
             <FontAwesomeIcon className='social-icons' icon={["fab",
             "github"]} size="2x"/>
           </Icon>
-          <Icon time={4} href="https://www.linkedin.com/in/paulsoonminchoi/" target="_blank" >
+          <Icon time={3} href="https://www.linkedin.com/in/paulsoonminchoi/" target="_blank" >
             <FontAwesomeIcon className='social-icons' icon={['fab', 'linkedin']} size="2x"/>
           </Icon>
-          <Icon time={5} href="https://www.instagram.com/paulchoiiii/" target="_blank" >
+          <Icon time={3} href="https://www.instagram.com/paulchoiiii/" target="_blank" >
             <FontAwesomeIcon className='social-icons' icon={['fab', 'instagram']} size="2x"/>
           </Icon>
         </IconContainer>
