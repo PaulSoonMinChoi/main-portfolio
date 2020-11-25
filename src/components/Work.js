@@ -57,6 +57,7 @@ const Title = styled.h1`
     text-align: center;
     max-width: 100%;
     width: 60%;
+    margin-bottom: 40px;
   }
 `;
 
@@ -103,6 +104,15 @@ const Span = styled.span`
 `;
 
 const Work = () => {
+
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <MainContainer>
       <Title><Span>Work</Span></Title>

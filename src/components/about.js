@@ -51,6 +51,7 @@ const Title = styled.h1`
     text-align: center;
     max-width: 100%;
     width: 60%;
+    margin-bottom: 40px;
   }
 `;
 
@@ -77,6 +78,15 @@ const Span = styled.span`
 
 
 const AboutUs = () => {
+
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <MainContainer className="aboutus-section" >
       <Title><Span>About</Span></Title>

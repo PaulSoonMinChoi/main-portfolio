@@ -96,6 +96,15 @@ const Span = styled.span`
 
 const Header = ({ siteTitle, subTitle }) => {
 
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   const titleArr = siteTitle.split('');
   return (
     <MainHeader>

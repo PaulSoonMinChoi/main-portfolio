@@ -93,6 +93,16 @@ const NavbarItems = styled.p`
 `;
 
 const Layout = ({ children, siteTitle, subTitle }) => {
+
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
