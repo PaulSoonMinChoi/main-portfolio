@@ -3,10 +3,10 @@
   color: black;
   text-decoration: none;
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
 }
 
 .link:hover {
   color: teal;
-  border-bottom: 1px solid teal;
+  border-bottom: 1px solid rgb(0, 128, 128, 0.5);
 }

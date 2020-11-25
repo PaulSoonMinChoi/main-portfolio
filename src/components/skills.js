@@ -63,7 +63,7 @@ const Title = styled.h1`
   color: rgb(30, 97, 97);
   width: 30%;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
   line-height: 0.1em;
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;

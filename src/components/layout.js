@@ -34,9 +34,9 @@ const MainContentContainer = styled.div`
 `;
 
 const Line = styled.div`
-  border-top: ${(props) => props.active ? `none` : `1px solid black`};
-  border-bottom: 1px solid black;
-  margin: ${(props) => props.active ? `0 0 3em 0` : `0 15em 5em 15em`};
+  border-top: ${(props) => props.active ? `none` : `1px solid rgb(0, 0, 0, 0.5);`};
+  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  margin: ${(props) => props.active ? `0 0 7em 0` : `0 15em 7em 15em`};
   height: 10vh;
   position: ${(props) => props.active ? `sticky` : `none`};
   top: ${(props) => props.active ? 0 : `none`};
@@ -48,10 +48,10 @@ const Line = styled.div`
   background: ${(props) => props.active ? `rgb(239 239 239)` : `none`};
 
   @media (max-width: 900px) {
-    margin: 0 0 5em 0;
+    margin: 0 0 8em 0;
     flex-direction: row;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+    border-top: 1px solid rgb(0, 0, 0, 0.5);
     height: 10vh;
     background-position: center;
 
