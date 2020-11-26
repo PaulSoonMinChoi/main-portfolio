@@ -14,13 +14,43 @@ import { Link } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import BabelLogo from '../images/babel.svg'
 import ReactLogo from '../images/react.svg'
 import WebpackLogo from '../images/webpack.svg'
 import GraphQlLogo from '../images/graphql.svg'
 import GatsbyLogo from '../images/gatsby.svg'
+import chevup from '../images/chevup.svg'
+import chevdown from '../images/chevdown.svg'
 
+library.add(fab);
+
+const animationFrames = keyframes`
+  0% {
+    opacity:0;
+    transform:  translate(-10px,-45px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+`;
+
+const pulsate = keyframes`
+  0% {
+      transform: scale(1, 1);
+  }
+
+  50% {
+      transform: scale(1.2, 1.2);
+  }
+
+  100% {
+      transform: scale(1, 1);
+  }
+`;
 
 const MainContentContainer = styled.div`
   margin: 0 10em;
@@ -36,7 +66,7 @@ const MainContentContainer = styled.div`
 const Line = styled.div`
   border-top: ${(props) => props.active ? `none` : `1px solid rgb(0, 0, 0, 0.5);`};
   border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-  margin: ${(props) => props.active ? `0 0 7em 0` : `0 15em 7em 15em`};
+  margin: ${(props) => props.active ? `0 0 7em 0` : `0 15em 0 15em`};
   height: 10vh;
   position: ${(props) => props.active ? `sticky` : `none`};
   top: ${(props) => props.active ? 0 : `none`};
@@ -46,6 +76,7 @@ const Line = styled.div`
   flex-direction: row;
   z-index: 1000;
   background: ${(props) => props.active ? `rgb(239 239 239)` : `none`};
+  animation: ${animationFrames} 3s ease;
 
   @media (max-width: 900px) {
     margin: 0 0 8em 0;
@@ -92,6 +123,44 @@ const NavbarItems = styled.p`
   cursor: pointer;
 `;
 
+const ButtonContainer = styled.span`
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 50px auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid black;
+  text-align:center;
+  animation: ${animationFrames} 4s ease;
+`;
+
+const ButtonDown = styled.img`
+  animation: ${pulsate} 1.5s ease;
+  animation-iteration-count: infinite;
+  padding-top: 5px;
+  padding-left: 1px;
+  height: 27px;
+`;
+
+const ButtonContainer2 = styled.span`
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0 auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid black;
+  text-align:center;
+`;
+
+const ButtonUp = styled.img`
+  animation: ${pulsate} 1.5s ease;
+  animation-iteration-count: infinite;
+  padding: 2px 2px 2px 3px;
+  height: 27px;
+`;
+
 const Layout = ({ children, siteTitle, subTitle }) => {
 
   const data = useStaticQuery(graphql`
@@ -116,6 +185,7 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const changeBackground = () => {
+    console.log(window.scrollY)
     if (window.scrollY >= 750) {
       setNavbar(true);
     } else {
@@ -123,11 +193,18 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     }
   }
 
+  const goDown = (num) => {
+    window[`scrollTo`]({ top: num, behavior: `smooth` })
+  }
+  // 1839afjslkdfjasklfjasklf
+  const goUp = () => {
+    window[`scrollTo`]({ top: 0, behavior: `smooth` })
+  }
+
   if (typeof window !== `undefined`) {
-    // const module = require("module")
     window.addEventListener('scroll', changeBackground);
   }
-  // document.getElementsByClassName('aboutus-section').scrollIntoView()
+
   return (
     <>
       <Header siteTitle={siteTitle} subTitle={subTitle} />
@@ -138,9 +215,16 @@ const Layout = ({ children, siteTitle, subTitle }) => {
         <NavbarItems><Link className="link" to="/blu/">Work</Link></NavbarItems>
         <NavbarItems><Link className="link" to="/blu/">Contact</Link></NavbarItems>
       </Line>
+      <ButtonContainer onClick={() => goDown(860)}>
+        <ButtonDown src={chevdown} alt="buttondown"/>
+      </ButtonContainer>
       <MainContentContainer>
         <main>{children}</main>
         <Footer>
+          <ButtonContainer2 onClick={() => goUp()}>
+            <ButtonUp src={chevup} alt="buttonup"/>
+          </ButtonContainer2>
+          <br></br>
           © {new Date().getFullYear()} Paul Choi <br></br>Built with: <br></br>
           {` `}
           <IconContainer>

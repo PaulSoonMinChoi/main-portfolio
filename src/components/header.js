@@ -65,6 +65,7 @@ const CharDiv = styled.div`
 
 const Char = styled.p`
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  font-size: 50px;
 `;
 
 const SubTitleDiv = styled.div`

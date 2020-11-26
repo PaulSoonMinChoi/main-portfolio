@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components"
 import { Link } from 'gatsby'
+import Paul from '../images/paul.jpeg'
 
 const animationFrames2 = keyframes`
   0% {
@@ -76,6 +77,11 @@ const Span = styled.span`
   padding: 0 10px;
 `;
 
+const Img = styled.img`
+  height: 600px;
+  width: 300px;
+  border: 2px solid black;
+`;
 
 const AboutUs = () => {
 
@@ -91,6 +97,7 @@ const AboutUs = () => {
     <MainContainer className="aboutus-section" >
       <Title><Span>About</Span></Title>
       <AboutUsContentContainer>
+        {/* <Img src={Paul} alt="paulchoi" /> */}
         <AboutUsIntro>
           Hi. I'm Paul, a full stack software engineer living in California. I bring innovative ideas to life with design and code.
         </AboutUsIntro>

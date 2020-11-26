@@ -1,6 +1,32 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components"
 import { Link } from 'gatsby'
+import reactlogo from '../images/react.svg'
+import redux from '../images/redux.svg'
+import jQuery from '../images/jQuery.svg'
+import html5 from '../images/html5.svg'
+import css3 from '../images/css3.svg'
+import firebase from '../images/firebase.svg'
+import nodejs from '../images/nodejs.svg'
+import express from '../images/express.svg'
+import mysql from '../images/mysql.svg'
+import sequelize from '../images/sequelize.svg'
+import mongodb from '../images/mongodb.svg'
+import postgreSQL from '../images/postgreSQL.svg'
+import gatsby from '../images/gatsby.svg'
+import nginx from '../images/nginx.svg'
+import loader from '../images/loader.svg'
+import k6 from '../images/k6.png'
+import artillery from '../images/artillery.jpg'
+import newrelic from '../images/newrelic.svg'
+import aws from '../images/aws.svg'
+import enzyme from '../images/airbnb.svg'
+import jest from '../images/jest.svg'
+import npm from '../images/npm.svg'
+import git from '../images/git.svg'
+import webpack from '../images/webpack.svg'
+import babel from '../images/babel.svg'
+
 
 const animationFrames2 = keyframes`
   0% {
@@ -49,7 +75,7 @@ const MainContainer = styled.div`
   }
 
   @media (max-width: 1200px) and (min-width: 1000px) {
-    height: 200vh;
+    height: 240vh;
     gap: 160px;
   }
 
@@ -93,7 +119,6 @@ const SkillsSectionContainer = styled.div`
 const SkillsSection = styled.div`
   display: flex;
   flex-direction: column;
-  // align-items: center;
 `;
 
 const SkillsTitle = styled.h3`
@@ -106,6 +131,31 @@ const SkillsEntry = styled.h4`
   padding: 10px;
   display: inline-block;
   vertical-align: middle;
+
+`;
+
+const SkillsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+`;
+
+const Span = styled.span`
+  background: rgb(239 239 239);
+  padding: 0 10px;
+`;
+
+const Logo = styled.img`
+  height: 40px;
+  width: 40px;
+  border-radius: 25%;
+  padding: 4px;
+  border: 1px solid rgb(0, 0, 0, 0.5);
+`;
+
+const SkillContainer = styled.div`
+  display: flex;
+  align-items: center;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -127,17 +177,6 @@ const SkillsEntry = styled.h4`
     -webkit-animation-direction: normal, alternate;
     animation-direction: normal, alternate;
   }
-`;
-
-const SkillsList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-`;
-
-const Span = styled.span`
-  background: rgb(239 239 239);
-  padding: 0 10px;
 `;
 
 
@@ -164,13 +203,30 @@ const Skills = () => {
               </SkillsTitle>
             </div>
             <SkillsList>
-              <SkillsEntry>React Native</SkillsEntry>
-              <SkillsEntry>ReactJS</SkillsEntry>
-              <SkillsEntry>jQuery</SkillsEntry>
-              <SkillsEntry>HTML5</SkillsEntry>
-              <SkillsEntry>CSS3</SkillsEntry>
-              <SkillsEntry>Cloud Firestore</SkillsEntry>
-              <SkillsEntry>Redux</SkillsEntry>
+              <SkillContainer>
+                <Logo src={reactlogo} alt="react" />
+                <SkillsEntry>React</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={jQuery} alt="jquery" />
+                <SkillsEntry>jQuery</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={html5} alt="html5" />
+                <SkillsEntry>HTML5</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={css3} alt="css3" />
+                <SkillsEntry>CSS3</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={firebase} alt="firebase" />
+                <SkillsEntry>Firebase</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={redux} alt="redux" />
+                <SkillsEntry>Redux</SkillsEntry>
+              </SkillContainer>
             </SkillsList>
           </SkillsSection>
           <SkillsSection>
@@ -180,14 +236,30 @@ const Skills = () => {
               </SkillsTitle>
             </div>
             <SkillsList>
-              <SkillsEntry>Node.js</SkillsEntry>
-              <SkillsEntry>Express</SkillsEntry>
-              <SkillsEntry>mySQL</SkillsEntry>
-              <SkillsEntry>Sequelize</SkillsEntry>
-              <SkillsEntry>MongoDB</SkillsEntry>
-              <SkillsEntry>Mongoose</SkillsEntry>
-              <SkillsEntry>PostgreSQL</SkillsEntry>
-              <SkillsEntry>RESTful APIs</SkillsEntry>
+              <SkillContainer>
+                <Logo src={nodejs} alt="Node.js" />
+                <SkillsEntry>Node.js</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={express} alt="Express" />
+                <SkillsEntry>Express</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={mysql} alt="mySQL" />
+                <SkillsEntry>mySQL</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={sequelize} alt="Sequelize" />
+                <SkillsEntry>Sequelize</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={mongodb} alt="MongoDB" />
+                <SkillsEntry>MongoDB</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={postgreSQL} alt="PostgreSQL" />
+                <SkillsEntry>PostgreSQL</SkillsEntry>
+              </SkillContainer>
             </SkillsList>
           </SkillsSection>
           <SkillsSection>
@@ -197,15 +269,42 @@ const Skills = () => {
               </SkillsTitle>
             </div>
             <SkillsList>
-              <SkillsEntry>Gatsby</SkillsEntry>
-              <SkillsEntry>NGINX</SkillsEntry>
-              <SkillsEntry>Loader.io</SkillsEntry>
-              <SkillsEntry>K6</SkillsEntry>
-              <SkillsEntry>Artillery.io</SkillsEntry>
-              <SkillsEntry>New Relic</SkillsEntry>
-              <SkillsEntry>AWS EC2</SkillsEntry>
-              <SkillsEntry>Enzyme</SkillsEntry>
-              <SkillsEntry>Jest</SkillsEntry>
+            <SkillContainer>
+                <Logo src={gatsby} alt="Gatsby" />
+                <SkillsEntry>Gatsby</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={nginx} alt="NGINX" />
+                <SkillsEntry>NGINX</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={loader} alt="Loader.io" />
+                <SkillsEntry>Loader.io</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={k6} alt="K6" />
+                <SkillsEntry>K6</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={artillery} alt="Artillery.io" />
+                <SkillsEntry>Artillery.io</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={newrelic} alt="New Relic" />
+                <SkillsEntry>New Relic</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={aws} alt="AWS EC2" />
+                <SkillsEntry>AWS EC2</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={enzyme } alt="Enzyme" />
+                <SkillsEntry>Enzyme</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={jest} alt="Jest" />
+                <SkillsEntry>Jest</SkillsEntry>
+              </SkillContainer>
             </SkillsList>
           </SkillsSection>
           <SkillsSection>
@@ -215,11 +314,22 @@ const Skills = () => {
               </SkillsTitle>
             </div>
             <SkillsList>
-              <SkillsEntry>Npm</SkillsEntry>
-              <SkillsEntry>Git</SkillsEntry>
-              <SkillsEntry>Axios</SkillsEntry>
-              <SkillsEntry>Webpack</SkillsEntry>
-              <SkillsEntry>Babel</SkillsEntry>
+            <SkillContainer>
+                <Logo src={npm} alt="Npm" />
+                <SkillsEntry>Npm</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={git} alt="Git" />
+                <SkillsEntry>Git</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={webpack} alt="Webpack" />
+                <SkillsEntry>Webpack</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={babel} alt="Babel" />
+                <SkillsEntry>Babel</SkillsEntry>
+              </SkillContainer>
             </SkillsList>
           </SkillsSection>
         </SkillsSectionContainer>
