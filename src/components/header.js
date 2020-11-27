@@ -23,6 +23,7 @@ const animationFrames = keyframes`
 
 const MainHeader = styled.header`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;
@@ -44,7 +45,8 @@ const IconContainer = styled.div`
 `;
 
 const Icon = styled.a`
-  color: inherit;
+  // color: inherit;
+  color: rgb(235, 235, 235);
   animation: ${animationFrames} ${(props) => props.time ? props.time : 0}s ease;
 `;
 
@@ -72,7 +74,7 @@ const SubTitleDiv = styled.div`
   animation: ${animationFrames} 2s ease;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #e9e9e9;;
   line-height: 0.1em;
   margin: 10px 0 20px;
 `;
@@ -91,8 +93,20 @@ const HeaderLine = styled.h1`
 `;
 
 const Span = styled.span`
-  background: rgb(239 239 239);
+  background: #41464b;
   padding: 0 10px;
+  color: rgb(235, 235, 235);
+`;
+
+const CircleContainer = styled.div`
+  animation: ${animationFrames} 2s ease;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const SingleCircle = styled.div`
+  padding: 60px 30px 0 30px;
 `;
 
 const Header = ({ siteTitle, subTitle }) => {
@@ -135,6 +149,35 @@ const Header = ({ siteTitle, subTitle }) => {
           </Icon>
         </IconContainer>
       </HeaderDiv>
+      <CircleContainer>
+        <SingleCircle>
+          <div class="outer-circle">
+            <div class="inner-circle"></div>
+            <span className="span1"></span>
+            <span className="span2"></span>
+            <span className="span3"></span>
+            <span className="span4"></span>
+          </div>
+        </SingleCircle>
+        <SingleCircle>
+          <div class="outer-circle">
+            <div class="inner-circle"></div>
+            <span className="span1"></span>
+            <span className="span2"></span>
+            <span className="span3"></span>
+            <span className="span4"></span>
+          </div>
+        </SingleCircle>
+        <SingleCircle>
+          <div class="outer-circle">
+            <div class="inner-circle"></div>
+            <span className="span1"></span>
+            <span className="span2"></span>
+            <span className="span3"></span>
+            <span className="span4"></span>
+          </div>
+        </SingleCircle>
+      </CircleContainer>
     </MainHeader>
   )
 }

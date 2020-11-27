@@ -46,7 +46,7 @@ const Title = styled.h1`
   color: rgb(30, 97, 97);
   width: 30%;
   text-align: center;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgb(231 231 231 / 50%);
   line-height: 0.1em;
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
@@ -79,7 +79,7 @@ const WorkContainer = styled.div`
 `;
 
 const AppTitle = styled.h3`
-  color: rgb(30, 97, 97);
+  color: rgb(78 237 237);
 `;
 
 const OneLiner = styled.p`
@@ -99,8 +99,9 @@ const Img = styled.img`
 `;
 
 const Span = styled.span`
-  background: rgb(239 239 239);
+  background: #41464b;
   padding: 0 10px;
+  color: rgb(78 237 237);
 `;
 
 const Work = () => {

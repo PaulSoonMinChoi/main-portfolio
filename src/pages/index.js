@@ -10,12 +10,11 @@ import Work from "../components/Work"
 const IndexPage = () => {
 
   return (
-    <Layout siteTitle={`SOONMIN  CHOI`} subTitle={`Full Stack Software Engineer`}>
+    <Layout siteTitle={`PAUL  CHOI`} subTitle={`Full Stack Software Engineer`}>
       <SEO title="Home" />
         <AboutUs />
         <Skills />
         <Work />
-      {/* {body()} */}
     </Layout>
   )
 }

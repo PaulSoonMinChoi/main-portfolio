@@ -41,7 +41,7 @@ const Title = styled.h1`
   color: rgb(30, 97, 97);
   width: 30%;
   text-align: center;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);;
+  border-bottom: 1px solid rgb(231 231 231 / 50%);
   line-height: 0.1em;
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
@@ -64,7 +64,7 @@ const AboutUsContentContainer = styled.div`
 `;
 
 const AboutUsIntro = styled.h3`
-  color: rgb(30, 97, 97);
+  color: rgb(78 237 237);
   line-height: 40px;
 `;
 
@@ -73,8 +73,9 @@ const Paragraph = styled.p`
 `;
 
 const Span = styled.span`
-  background: rgb(239 239 239);
+  background: #41464b;
   padding: 0 10px;
+  color: rgb(78 237 237);
 `;
 
 const Img = styled.img`
@@ -106,7 +107,7 @@ const AboutUs = () => {
         </Paragraph>
         <Paragraph>
           Currently I'm looking for a full time software engineering based role. In addition I am working on
-          a side project called <Link style={{color: 'blue'}} to="/blu">Blu</Link> which allows gamers to connect with other
+          a side project called <Link style={{color: 'rgb(78 237 237)', fontWeight: 'bold'}} to="/blu">Blu</Link> which allows gamers to connect with other
           gamers for better online multiplayer experiences.
         </Paragraph>
       </AboutUsContentContainer>

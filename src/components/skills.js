@@ -89,7 +89,7 @@ const Title = styled.h1`
   color: rgb(30, 97, 97);
   width: 30%;
   text-align: center;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgb(231 231 231 / 50%);
   line-height: 0.1em;
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
@@ -122,16 +122,15 @@ const SkillsSection = styled.div`
 `;
 
 const SkillsTitle = styled.h3`
-  color: rgb(30, 97, 97);
+  color: rgb(78 237 237);
 `;
 
 const SkillsEntry = styled.h4`
-  // background-image: linear-gradient(to right, rgb(71, 158, 158), rgb(146, 185, 185));
   border-radius: 10px;
   padding: 10px;
   display: inline-block;
   vertical-align: middle;
-
+  color: rgb(235, 235, 235);
 `;
 
 const SkillsList = styled.div`
@@ -141,8 +140,9 @@ const SkillsList = styled.div`
 `;
 
 const Span = styled.span`
-  background: rgb(239 239 239);
+  background: #41464b;
   padding: 0 10px;
+  color: rgb(78 237 237);
 `;
 
 const Logo = styled.img`

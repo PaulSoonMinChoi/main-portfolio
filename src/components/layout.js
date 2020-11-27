@@ -64,8 +64,8 @@ const MainContentContainer = styled.div`
 `;
 
 const Line = styled.div`
-  border-top: ${(props) => props.active ? `none` : `1px solid rgb(0, 0, 0, 0.5);`};
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  border-top: ${(props) => props.active ? `none` : `1px solid rgb(231 231 231 / 50%);`};
+  border-bottom: 1px solid rgb(231 231 231 / 50%);
   margin: ${(props) => props.active ? `0 0 7em 0` : `0 15em 0 15em`};
   height: 10vh;
   position: ${(props) => props.active ? `sticky` : `none`};
@@ -75,7 +75,7 @@ const Line = styled.div`
   align-items: center;
   flex-direction: row;
   z-index: 1000;
-  background: ${(props) => props.active ? `rgb(239 239 239)` : `none`};
+  background: ${(props) => props.active ? `#41464b` : `none`};
   animation: ${animationFrames} 3s ease;
 
   @media (max-width: 900px) {
@@ -92,7 +92,7 @@ const Line = styled.div`
 const Footer = styled.footer`
   margin-top: 2rem;
   text-align: center;
-  color: rgb(102, 102, 102);
+  color: rgb(235, 235, 235);
   font-style: italic;
 `;
 
@@ -130,9 +130,12 @@ const ButtonContainer = styled.span`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid black;
+  border: 3px solid rgb(235, 235, 235);
   text-align:center;
   animation: ${animationFrames} 4s ease;
+  &:hover {
+    border-color: rgb(30, 97, 97);
+  }
 `;
 
 const ButtonDown = styled.img`
@@ -150,8 +153,12 @@ const ButtonContainer2 = styled.span`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid black;
+  border: 3px solid rgb(235, 235, 235);
   text-align:center;
+
+  &:hover {
+    border-color: rgb(30, 97, 97);
+  }
 `;
 
 const ButtonUp = styled.img`
@@ -175,6 +182,7 @@ const Layout = ({ children, siteTitle, subTitle }) => {
 
   const [hasMounted, setHasMounted] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [atHome, setAtHome] = useState(true);
 
   React.useEffect(() => {
     setHasMounted(true);
@@ -185,7 +193,6 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const changeBackground = () => {
-    console.log(window.scrollY)
     if (window.scrollY >= 750) {
       setNavbar(true);
     } else {
@@ -201,6 +208,12 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     window[`scrollTo`]({ top: 0, behavior: `smooth` })
   }
 
+  const checkIfHome = (num) => {
+    if (atHome) {
+      goDown(num)
+    }
+  }
+
   if (typeof window !== `undefined`) {
     window.addEventListener('scroll', changeBackground);
   }
@@ -208,12 +221,14 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   return (
     <>
       <Header siteTitle={siteTitle} subTitle={subTitle} />
+
       <Line active={navbar} >
-        <NavbarItems><Link className="link" to="/">Home</Link></NavbarItems>
-        <NavbarItems  onClick={() => console.log('hello')} ><Link className="link" >About</Link></NavbarItems>
-        <NavbarItems><Link className="link" to="/blu/">Skills</Link></NavbarItems>
-        <NavbarItems><Link className="link" to="/blu/">Work</Link></NavbarItems>
-        <NavbarItems><Link className="link" to="/blu/">Contact</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(0), 800)} ><Link className="link" to="/">Home</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(860), 800)} ><Link className="link" to="/">About</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(1890), 800)} ><Link className="link" to="/">Skills</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(3268), 800)} ><Link className="link" to="/">Work</Link></NavbarItems>
+        <NavbarItems><Link className="link" to="/resume/">Resume</Link></NavbarItems>
+        <NavbarItems><Link className="link" to="/contact/">Contact</Link></NavbarItems>
       </Line>
       <ButtonContainer onClick={() => goDown(860)}>
         <ButtonDown src={chevdown} alt="buttondown"/>
