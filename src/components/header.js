@@ -45,7 +45,6 @@ const IconContainer = styled.div`
 `;
 
 const Icon = styled.a`
-  // color: inherit;
   color: rgb(235, 235, 235);
   animation: ${animationFrames} ${(props) => props.time ? props.time : 0}s ease;
 `;
@@ -109,6 +108,18 @@ const SingleCircle = styled.div`
   padding: 60px 30px 0 30px;
 `;
 
+const SecondCircle = styled(SingleCircle)`
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const ThirdCircle = styled(SingleCircle)`
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
 const Header = ({ siteTitle, subTitle }) => {
 
   const [hasMounted, setHasMounted] = React.useState(false);
@@ -159,7 +170,7 @@ const Header = ({ siteTitle, subTitle }) => {
             <span className="span4"></span>
           </div>
         </SingleCircle>
-        <SingleCircle>
+        <SecondCircle>
           <div class="outer-circle">
             <div class="inner-circle"></div>
             <span className="span1"></span>
@@ -167,8 +178,8 @@ const Header = ({ siteTitle, subTitle }) => {
             <span className="span3"></span>
             <span className="span4"></span>
           </div>
-        </SingleCircle>
-        <SingleCircle>
+        </SecondCircle>
+        <ThirdCircle>
           <div class="outer-circle">
             <div class="inner-circle"></div>
             <span className="span1"></span>
@@ -176,7 +187,7 @@ const Header = ({ siteTitle, subTitle }) => {
             <span className="span3"></span>
             <span className="span4"></span>
           </div>
-        </SingleCircle>
+        </ThirdCircle>
       </CircleContainer>
     </MainHeader>
   )
