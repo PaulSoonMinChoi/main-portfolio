@@ -40,6 +40,11 @@ const Text = styled.h4`
   color: rgb(235, 235, 235);
 `;
 
+const BoldText = styled(Text)`
+  color: rgb(206 134 184);
+  display: inline;
+`;
+
 const Paragraph = styled(Text)`
   line-height: 50px;
 `;
@@ -84,26 +89,26 @@ const FECPage = () => (
     <SectionDiv>
       <BoldContent>GitHub: </BoldContent>
       <FlexDiv>
-        <Icon href="https://github.com/PaulSoonMinChoi" target="_blank" >
+        <Icon href="https://github.com/hrla39copypasta/Etsy-NavBar" target="_blank" >
           <FontAwesomeIcon className='social-icons' icon={["fab",
           "github"]} size="2x"/>
+          <Text>Repository</Text>
         </Icon>
-        <Text>Repository</Text>
       </FlexDiv>
     </SectionDiv>
     <SectionDiv>
       <BoldContent>High Level Overview: </BoldContent>
-      <Text>1. Replicate a module heavy website visually</Text>
-      <Text>2. Generate 1000+ unique data entries within the application</Text>
-      <Text>3. Incoperate all modules together with a proxy server</Text>
-      <Text>4. Host finished single page application on a aws ec2 t2.micro instance</Text>
+      <Text>1. Replicate a <BoldText>module heavy</BoldText> website visually</Text>
+      <Text>2. Generate <BoldText>1000+ unique data entries</BoldText> within the application</Text>
+      <Text>3. Incoperate all modules together with a <BoldText>proxy server</BoldText></Text>
+      <Text>4. Host finished single page application on a <BoldText>aws ec2 t2.micro instance</BoldText></Text>
     </SectionDiv>
     <SectionDiv>
       <BoldContent>Small Summary: </BoldContent>
       <Paragraph>
-        To start we were tasked with finding a module heavy website (preferably an E-commerce website) so we chose Etsy.
-        Then my team of 5 engineers in total, had to decide which part of the single page application we wanted to split.
-        Therefore I chose the navbar portion of Etsy's display product page. Some challenges I faced were figuring out how to query data entries depending on the user's input value. This challenge was easily solved with a handy tool in mySQL called like or also known as the (%) wildcard. This allowed my search bar functionality to become quick with responding to the user's inputs and displaying the correct data entries. After launching 1 AWS EC2 t2.micro instance and using a proxy server to combine all our modules together we then deployed the single page application. In conclusion to this short journey, I learned the importance of agile workflow and how service oriented architecture works well within a team.
+        To start we were tasked with finding a module heavy website (preferably an E-commerce website) so we chose <BoldText>Etsy</BoldText>.
+        Then my team of 5 engineers in total, had to decide which part of the <BoldText>single page application</BoldText> we wanted to split.
+        Therefore I chose the <BoldText>navbar</BoldText> portion of Etsy's display product page. Some challenges I faced were figuring out how to query data entries depending on the user's input value. This challenge was easily solved with a handy tool in mySQL called like or also known as the <BoldText>(%) wildcard</BoldText>. This allowed my search bar functionality to become quick with responding to the user's inputs and displaying the correct data entries. After launching <BoldText>1 AWS EC2 t2.micro instance and using a proxy server</BoldText> to combine all our modules together we then deployed the single page application. In conclusion to this short journey, I learned the importance of <BoldText>agile workflow and how service oriented architecture</BoldText> works well within a team.
       </Paragraph>
       <BoldContent>Main Concepts Learned: </BoldContent>
       <CommentSection>

@@ -10,6 +10,15 @@ import ReactTooltip from 'react-tooltip';
 
 library.add(fab);
 
+const rotate = keyframes`
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+`;
+
 const animationFrames = keyframes`
   0% {
     opacity:0;
@@ -120,9 +129,53 @@ const ThirdCircle = styled(SingleCircle)`
   }
 `;
 
+const OuterCircle = styled.div`
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background: ${(props) => props.active ? `linear-gradient(#14ffe9, #ffeb3b, #ff00e0)` : `black`};
+  border-radius: 50%;
+  animation: ${rotate} 1.5s linear infinite;
+`;
+
+const InnerCircle = styled.div`
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  background: ${(props) => props.active ? `rgb(213 213 213 / 72%)` : `black`};
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 9;
+`;
+
+const Span1 = styled.span`
+  filter: blur(5px);
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 50%;
+`;
+
+const Span2 = styled.span`
+  filter: blur(10px);
+`;
+
+const Span3 = styled.span`
+  filter: blur(25px);
+`;
+
+const Span4 = styled.span`
+  filter: blur(150px);
+`;
+
+
 const Header = ({ siteTitle, subTitle }) => {
 
   const [hasMounted, setHasMounted] = React.useState(false);
+  const [ball, setBall] = useState(true);
+
   React.useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -131,7 +184,12 @@ const Header = ({ siteTitle, subTitle }) => {
     return null;
   }
 
+  const turnOff = () => {
+    setBall(!ball);
+  }
+
   const titleArr = siteTitle.split('');
+
   return (
     <MainHeader>
       <HeaderDiv>
@@ -161,32 +219,32 @@ const Header = ({ siteTitle, subTitle }) => {
         </IconContainer>
       </HeaderDiv>
       <CircleContainer>
-        <SingleCircle>
-          <div class="outer-circle">
-            <div class="inner-circle"></div>
-            <span className="span1"></span>
-            <span className="span2"></span>
-            <span className="span3"></span>
-            <span className="span4"></span>
-          </div>
+        <SingleCircle >
+          <OuterCircle onClick={turnOff} active={ball}>
+            <InnerCircle active={ball}></InnerCircle>
+            <Span1></Span1>
+            <Span2></Span2>
+            <Span3></Span3>
+            <Span4></Span4>
+          </OuterCircle>
         </SingleCircle>
         <SecondCircle>
-          <div class="outer-circle">
-            <div class="inner-circle"></div>
-            <span className="span1"></span>
-            <span className="span2"></span>
-            <span className="span3"></span>
-            <span className="span4"></span>
-          </div>
+          <OuterCircle onClick={turnOff} active={ball}>
+            <InnerCircle active={ball}></InnerCircle>
+            <Span1></Span1>
+            <Span2></Span2>
+            <Span3></Span3>
+            <Span4></Span4>
+          </OuterCircle>
         </SecondCircle>
         <ThirdCircle>
-          <div class="outer-circle">
-            <div class="inner-circle"></div>
-            <span className="span1"></span>
-            <span className="span2"></span>
-            <span className="span3"></span>
-            <span className="span4"></span>
-          </div>
+          <OuterCircle onClick={turnOff} active={ball}>
+            <InnerCircle active={ball}></InnerCircle>
+            <Span1></Span1>
+            <Span2></Span2>
+            <Span3></Span3>
+            <Span4></Span4>
+          </OuterCircle>
         </ThirdCircle>
       </CircleContainer>
     </MainHeader>
