@@ -67,6 +67,14 @@ const Icon = styled.a`
   color: rgb(235, 235, 235);
 `;
 
+const CommentArea = styled.h4`
+  text-align: center;
+  color: rgb(235 90 90);
+  width: 300px;
+  padding: 10px;
+  background-color: #000000;
+`;
+
 
 
 const FECPage = () => (
@@ -74,12 +82,12 @@ const FECPage = () => (
     <ImageDiv>
       <ColumnDiv>
         <Img src={fecgif} alt="FEC gif" />
-        <BoldContent>Getsy Application</BoldContent>
+        <CommentArea>Getsy Application</CommentArea>
       </ColumnDiv>
       <VersesTitle>VS</VersesTitle>
       <ColumnDiv>
         <Img src={etsygif} alt="Etsy gif" />
-        <BoldContent>Etsy's Application</BoldContent>
+        <CommentArea>Etsy's Application</CommentArea>
       </ColumnDiv>
     </ImageDiv>
     <SectionDiv>

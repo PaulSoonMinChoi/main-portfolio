@@ -136,7 +136,7 @@ const SkillsEntry = styled.h4`
 const SkillsList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 37px;
 `;
 
 const Span = styled.span`
