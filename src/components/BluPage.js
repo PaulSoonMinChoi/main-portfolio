@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components"
-import { Link } from 'gatsby'
 import bluapp from '../images/bluapp.png'
 import bluapp2 from '../images/bluapp2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
