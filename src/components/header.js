@@ -89,7 +89,6 @@ const SubTitleDiv = styled.div`
   border-bottom: 1px solid #e9e9e9;;
   line-height: 0.1em;
   margin: 10px 0 20px;
-
 `;
 
 const Opening = styled.div`

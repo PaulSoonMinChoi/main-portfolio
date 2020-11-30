@@ -84,6 +84,10 @@ const MainContainer = styled.div`
     margin: 0;
     margin-bottom: 200px;
   }
+
+  @media (max-width: 540px) {
+    margin-bottom: 400px;
+  }
 `;
 
 const Title = styled.h1`
