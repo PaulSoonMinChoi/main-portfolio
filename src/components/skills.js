@@ -82,6 +82,7 @@ const MainContainer = styled.div`
   @media (max-width: 375px) {
     height: 200vh;
     margin: 0;
+    margin-bottom: 200px;
   }
 `;
 

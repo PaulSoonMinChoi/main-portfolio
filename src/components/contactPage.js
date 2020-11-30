@@ -53,6 +53,10 @@ const SectionDiv = styled.div`
 
 const FlexDiv = styled(SectionDiv)`
   display: flex;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 `;
 
 const Label = styled.label`

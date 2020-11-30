@@ -26,6 +26,10 @@ const ColumnDiv = styled(Div)`
 
 const ImageDiv = styled(Div)`
   gap: 50px;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 `;
 
 const VersesTitle = styled.h2`

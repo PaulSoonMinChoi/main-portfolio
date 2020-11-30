@@ -63,6 +63,10 @@ const TitleContainer = styled.div`
   align-items: center;
   gap: 10px;
   animation: ${animationFrames} 2s ease;
+  @media (max-width: 375px) {
+    flex-wrap: wrap;
+    width: 375px;
+  }
 `;
 
 const CharDiv = styled.div`
@@ -85,6 +89,7 @@ const SubTitleDiv = styled.div`
   border-bottom: 1px solid #e9e9e9;;
   line-height: 0.1em;
   margin: 10px 0 20px;
+
 `;
 
 const Opening = styled.div`

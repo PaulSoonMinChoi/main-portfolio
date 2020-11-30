@@ -34,6 +34,7 @@ const MainContainer = styled.div`
 
   @media (max-width: 375px) {
     height: 120vh;
+    margin-bottom: 200px;
   }
 `;
 
