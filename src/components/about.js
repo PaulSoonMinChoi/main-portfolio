@@ -79,7 +79,7 @@ const Paragraph = styled.p`
 `;
 
 const Span = styled.span`
-  background: #41464b;
+  background: #191818;
   padding: 0 10px;
   color: rgb(78 237 237);
 `;

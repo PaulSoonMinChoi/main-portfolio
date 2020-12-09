@@ -105,7 +105,7 @@ const HeaderLine = styled.h1`
 `;
 
 const Span = styled.span`
-  background: #41464b;
+  background: #191818;
   padding: 0 10px;
   color: rgb(235, 235, 235);
 `;

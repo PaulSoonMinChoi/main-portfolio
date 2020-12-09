@@ -75,7 +75,7 @@ const Line = styled.div`
   align-items: center;
   flex-direction: row;
   z-index: 1000;
-  background: ${(props) => props.active ? `#41464b` : `none`};
+  background: ${(props) => props.active ? `#191818` : `none`};
   animation: ${animationFrames} 3s ease;
 
   @media (max-width: 900px) {
