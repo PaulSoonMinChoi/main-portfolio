@@ -3,7 +3,7 @@ import './Work.css'
 import styled, { keyframes } from "styled-components"
 import { Link } from 'gatsby'
 import BluLogo from '../images/blulogo.png'
-import GitHub from '../images/github-icon.svg'
+import GitHub from '../images/github2.svg'
 
 
 const animationFrames2 = keyframes`
@@ -98,8 +98,12 @@ const Img = styled.img`
   width: 140px;
 `;
 
+const Img2 = styled(Img)`
+  height: 165px;
+`;
+
 const Span = styled.span`
-  background: #41464b;
+  background: #191818;
   padding: 0 10px;
   color: rgb(78 237 237);
 `;
@@ -131,7 +135,7 @@ const Work = () => {
           </WorkContainer>
         </MainWorkContainer>
         <MainWorkContainer>
-          <Img src={GitHub} alt="BluLogo"/>
+          <Img2 src={GitHub} alt="BluLogo"/>
           <WorkContainer>
             <AppTitle>
               Getsy, Etsy E-Commerce Clone
@@ -143,7 +147,7 @@ const Work = () => {
           </WorkContainer>
         </MainWorkContainer>
         <MainWorkContainer>
-          <Img src={GitHub} alt="BluLogo"/>
+          <Img2 src={GitHub} alt="BluLogo"/>
           <WorkContainer>
             <AppTitle>
               System Design & Scaling

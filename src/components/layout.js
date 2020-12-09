@@ -193,6 +193,7 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const changeBackground = () => {
+    // console.log(window.screen.availHeight)
     if (window.scrollY >= 750) {
       setNavbar(true);
     } else {
