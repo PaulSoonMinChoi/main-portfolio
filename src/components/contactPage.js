@@ -19,10 +19,6 @@ const ColumnDiv = styled(Div)`
   align-items: center;
 `;
 
-const ImageDiv = styled(Div)`
-  gap: 50px;
-`;
-
 const VersesTitle = styled.h2`
   color: rgb(78 237 237);
 `;
@@ -32,19 +28,6 @@ const BoldContent = styled(VersesTitle)`
   margin-bottom: 0;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   color: rgb(235, 235, 235);
-`;
-
-const Text = styled.h4`
-  color: rgb(235, 235, 235);
-`;
-
-const BoldText = styled(Text)`
-  color: rgb(206 134 184);
-  display: inline;
-`;
-
-const Paragraph = styled(Text)`
-  line-height: 50px;
 `;
 
 const SectionDiv = styled.div`
@@ -57,10 +40,6 @@ const FlexDiv = styled(SectionDiv)`
   @media (max-width: 375px) {
     flex-direction: column;
   }
-`;
-
-const Label = styled.label`
-  padding-right: 30px;
 `;
 
 const Input = styled.input`

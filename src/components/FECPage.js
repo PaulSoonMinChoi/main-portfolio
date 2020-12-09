@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from "styled-components"
-import { Link } from 'gatsby'
+import styled from "styled-components"
 import fecgif from '../images/gifs/fecgif.gif'
 import etsygif from '../images/gifs/etsygif.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

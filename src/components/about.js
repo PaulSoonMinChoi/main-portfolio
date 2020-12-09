@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components"
 import { Link } from 'gatsby'
-import Paul from '../images/paul.jpeg'
 
 const animationFrames2 = keyframes`
   0% {
@@ -82,12 +81,6 @@ const Span = styled.span`
   background: #191818;
   padding: 0 10px;
   color: rgb(78 237 237);
-`;
-
-const Img = styled.img`
-  height: 600px;
-  width: 300px;
-  border: 2px solid black;
 `;
 
 const AboutUs = () => {

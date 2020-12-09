@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components"
-import { Link } from 'gatsby'
 import reactlogo from '../images/react.svg'
 import redux from '../images/redux.svg'
 import jQuery from '../images/jquery.svg'

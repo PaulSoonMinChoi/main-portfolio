@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from "styled-components"
-import { Link } from 'gatsby'
+import styled from "styled-components"
 import resume from '../images/resume.pdf'
 
 const ResumeContainer = styled.div`

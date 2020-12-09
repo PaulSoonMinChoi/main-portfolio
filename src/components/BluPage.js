@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import bluapp from '../images/bluapp.png'
 import bluapp2 from '../images/bluapp2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,20 +12,6 @@ library.add(fab);
 const Img = styled.img`
   border: 4px solid rgb(235, 235, 235);
   border-radius: 5px;
-`;
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ColumnDiv = styled(Div)`
-  flex-direction: column;
-`;
-
-const ImageDiv = styled(Div)`
-  gap: 50px;
 `;
 
 const VersesTitle = styled.h2`

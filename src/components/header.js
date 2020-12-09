@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import './header.css'
 import PropTypes from "prop-types"
 import React, { useState } from "react"
@@ -6,7 +5,6 @@ import styled, { keyframes } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import ReactTooltip from 'react-tooltip';
 
 library.add(fab);
 
@@ -87,19 +85,6 @@ const SubTitleDiv = styled.div`
   width: 100%;
   text-align: center;
   border-bottom: 1px solid #e9e9e9;;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
-`;
-
-const Opening = styled.div`
-  height: 90vh;
-  background-color: lightblue;
-`;
-
-const HeaderLine = styled.h1`
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
   line-height: 0.1em;
   margin: 10px 0 20px;
 `;

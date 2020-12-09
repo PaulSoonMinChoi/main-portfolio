@@ -1,19 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import styled, { keyframes } from "styled-components"
 import { Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
@@ -130,8 +121,9 @@ const ButtonContainer = styled.span`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid rgb(235, 235, 235);
+  border: 3px solid rgb(90 211 223);
   text-align:center;
+  background-color: white;
   animation: ${animationFrames} 4s ease;
   &:hover {
     border-color: rgb(30, 97, 97);
@@ -144,6 +136,7 @@ const ButtonDown = styled.img`
   padding-top: 5px;
   padding-left: 1px;
   height: 27px;
+  color: white;
 `;
 
 const ButtonContainer2 = styled.span`
@@ -153,8 +146,9 @@ const ButtonContainer2 = styled.span`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid rgb(235, 235, 235);
+  border: 3px solid rgb(90 211 223);
   text-align:center;
+  background-color: white;
 
   &:hover {
     border-color: rgb(30, 97, 97);
@@ -169,16 +163,6 @@ const ButtonUp = styled.img`
 `;
 
 const Layout = ({ children, siteTitle, subTitle }) => {
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   const [hasMounted, setHasMounted] = useState(false);
   const [navbar, setNavbar] = useState(false);
