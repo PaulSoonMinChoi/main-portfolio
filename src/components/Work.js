@@ -103,7 +103,7 @@ const Img2 = styled(Img)`
 `;
 
 const Span = styled.span`
-  background: #191818;
+  background: #000;
   padding: 0 10px;
   color: rgb(78 237 237);
 `;

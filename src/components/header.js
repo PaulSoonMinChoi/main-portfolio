@@ -90,7 +90,7 @@ const SubTitleDiv = styled.div`
 `;
 
 const Span = styled.span`
-  background: #191818;
+  background: #000;
   padding: 0 10px;
   color: rgb(235, 235, 235);
 `;

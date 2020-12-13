@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from "styled-components"
+import React, { useState, useEffect, useRef} from 'react';
+import styled, { keyframes} from "styled-components"
 import { Link } from 'gatsby'
 
 const animationFrames2 = keyframes`
@@ -19,6 +19,8 @@ const MainContainer = styled.div`
   gap: 250px;
   height: 80vh;
   align-items: center;
+  transition: transform 2s ease-in-out,opacity 1s ease-in-out;
+  opacity: ${(props) => props.active ? '1' : `0`};
 
   @media (max-width: 1000px)  {
     flex-direction: column;
@@ -78,12 +80,14 @@ const Paragraph = styled.p`
 `;
 
 const Span = styled.span`
-  background: #191818;
+  background: #000;
   padding: 0 10px;
   color: rgb(78 237 237);
 `;
 
-const AboutUs = () => {
+const AboutUs = ({useOnScreen}) => {
+
+  const [ref, visible] = useOnScreen({ threshold: 0.3 });
 
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
@@ -94,7 +98,7 @@ const AboutUs = () => {
   }
 
   return (
-    <MainContainer className="aboutus-section" >
+    <MainContainer ref={ref} active={visible} className="aboutus-section" >
       <Title><Span>About</Span></Title>
       <AboutUsContentContainer>
         {/* <Img src={Paul} alt="paulchoi" /> */}

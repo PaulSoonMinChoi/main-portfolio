@@ -141,10 +141,12 @@ const SkillsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 37px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+  // border-top: 1px solid rgba(224, 224, 224, 0.5);
 `;
 
 const Span = styled.span`
-  background: #191818;
+  background: #000;
   padding: 0 10px;
   color: rgb(78 237 237);
 `;
