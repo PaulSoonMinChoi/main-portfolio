@@ -66,6 +66,8 @@ const MainContainer = styled.div`
   gap: 280px;
   height: 130vh;
   align-items: center;
+  transition: transform 2s ease-in-out,opacity 1s ease-in-out;
+  opacity: ${(props) => props.active ? '1' : `0`};
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -186,7 +188,9 @@ const SkillContainer = styled.div`
 `;
 
 
-const Skills = () => {
+const Skills = ({useOnScreen}) => {
+
+  const [ref, visible] = useOnScreen({ threshold: 0.3 });
 
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
@@ -198,7 +202,7 @@ const Skills = () => {
   }
 
   return (
-    <MainContainer>
+    <MainContainer ref={ref} active={visible} >
       <Title><Span>Skills</Span></Title>
       <AboutUsContentContainer>
         <SkillsSectionContainer>

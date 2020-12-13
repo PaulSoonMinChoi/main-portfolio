@@ -23,6 +23,8 @@ const MainContainer = styled.div`
   gap: 250px;
   height: 160vh;
   align-items: center;
+  transition: transform 2s ease-in-out,opacity 1s ease-in-out;
+  opacity: ${(props) => props.active ? '1' : `0`};
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -108,7 +110,9 @@ const Span = styled.span`
   color: rgb(78 237 237);
 `;
 
-const Work = () => {
+const Work = ({useOnScreen}) => {
+
+  const [ref, visible] = useOnScreen({ threshold: 0.3 });
 
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
@@ -119,7 +123,7 @@ const Work = () => {
   }
 
   return (
-    <MainContainer>
+    <MainContainer ref={ref} active={visible}>
       <Title><Span>Work</Span></Title>
       <WorkList>
         <MainWorkContainer>

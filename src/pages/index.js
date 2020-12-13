@@ -36,8 +36,8 @@ const IndexPage = () => {
     <Layout siteTitle={`PAUL CHOI`} subTitle={`Full Stack Software Engineer`}>
       <SEO title="Home" />
         <AboutUs useOnScreen={useOnScreen} />
-        <Skills />
-        <Work />
+        <Skills useOnScreen={useOnScreen} />
+        <Work useOnScreen={useOnScreen} />
     </Layout>
   )
 }

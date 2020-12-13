@@ -98,7 +98,7 @@ const AboutUs = ({useOnScreen}) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible} className="aboutus-section" >
+    <MainContainer ref={ref} active={visible} >
       <Title><Span>About</Span></Title>
       <AboutUsContentContainer>
         {/* <Img src={Paul} alt="paulchoi" /> */}
