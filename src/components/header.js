@@ -65,6 +65,7 @@ const TitleContainer = styled.div`
   @media (max-width: 375px) {
     flex-wrap: wrap;
     width: 375px;
+    justify-content: center;
   }
 `;
 

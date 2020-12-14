@@ -5,12 +5,20 @@ const Div = styled.div`
   display: flex;
   margin: 40px;
   align-items: center;
+
+  @media (max-width: 375px) {
+    margin: 40px 0 40px;
+  }
 `;
 
 const Div2 = styled.div`
   display: flex;
   margin: 40px 40px 0 40px;
   align-items: center;
+
+  @media (max-width: 375px) {
+    margin: 40px 0 40px;
+  }
 `;
 
 const ColumnDiv = styled(Div)`
