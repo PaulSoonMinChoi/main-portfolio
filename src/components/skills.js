@@ -144,7 +144,6 @@ const SkillsList = styled.div`
   flex-wrap: wrap;
   gap: 37px;
   border-bottom: 1px solid rgba(224, 224, 224, 0.5);
-  // border-top: 1px solid rgba(224, 224, 224, 0.5);
 `;
 
 const Span = styled.span`
@@ -202,7 +201,7 @@ const Skills = ({useOnScreen}) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible} >
+    <MainContainer ref={ref} active={visible} className="down-two" >
       <Title><Span>Skills</Span></Title>
       <AboutUsContentContainer>
         <SkillsSectionContainer>

@@ -10,3 +10,14 @@
   color: teal;
   border-bottom: 1px solid rgb(0, 128, 128, 0.5);
 }
+
+.link2 {
+  margin: 0;
+  color: rgb(235, 235, 235);
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+.link2:hover {
+  color: teal;
+}

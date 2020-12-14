@@ -58,7 +58,7 @@ const Line = styled.div`
   border-top: ${(props) => props.active ? `none` : `1px solid rgb(231 231 231 / 50%);`};
   border-bottom: 1px solid rgb(231 231 231 / 50%);
   margin: ${(props) => props.active ? `0 0 7em 0` : `0 15em 0 15em`};
-  height: 10vh;
+  height: ${(props) => props.active ? `6vh` : `10vh`};
   position: ${(props) => props.active ? `sticky` : `none`};
   top: ${(props) => props.active ? 0 : `none`};
   display: flex;
@@ -177,7 +177,6 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const changeBackground = () => {
-    // console.log(window.screen.availHeight)
     if (window.scrollY >= 750) {
       setNavbar(true);
     } else {
@@ -186,9 +185,23 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const goDown = (num) => {
-    window[`scrollTo`]({ top: num, behavior: `smooth` })
+    if (num === 0) {
+      window[`scrollTo`]({ top: 0, behavior: `smooth` })
+    } else if (num === 1) {
+      console.log(document.getElementsByClassName('down-one')[0])
+      document.getElementsByClassName('down-one')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
+      return;
+    } else if (num === 2) {
+      console.log(document.getElementsByClassName('down-two')[0])
+      document.getElementsByClassName('down-two')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
+      return;
+    } else if (num === 3) {
+      console.log(document.getElementsByClassName('down-three')[0])
+      document.getElementsByClassName('down-three')[0].scrollIntoView({ behavior: `smooth`, block: `center` })
+      return;
+    }
   }
-  // 1839afjslkdfjasklfjasklf
+
   const goUp = () => {
     window[`scrollTo`]({ top: 0, behavior: `smooth` })
   }
@@ -206,14 +219,13 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   return (
     <>
       <Header siteTitle={siteTitle} subTitle={subTitle} />
-
       <Line active={navbar} >
-        <NavbarItems onClick={() => setTimeout(() => checkIfHome(0), 800)} ><Link className="link" to="/">Home</Link></NavbarItems>
-        <NavbarItems onClick={() => setTimeout(() => checkIfHome(860), 800)} ><Link className="link" to="/">About</Link></NavbarItems>
-        <NavbarItems onClick={() => setTimeout(() => checkIfHome(1890), 800)} ><Link className="link" to="/">Skills</Link></NavbarItems>
-        <NavbarItems onClick={() => setTimeout(() => checkIfHome(3268), 800)} ><Link className="link" to="/">Work</Link></NavbarItems>
-        <NavbarItems><Link className="link" to="/resume/">Resume</Link></NavbarItems>
-        <NavbarItems><Link className="link" to="/contact/">Contact</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(0), 800)} ><Link className="link2" to="/">Home</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(1), 800)} ><Link className="link2" to="/">About</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(2), 800)} ><Link className="link2" to="/">Skills</Link></NavbarItems>
+        <NavbarItems onClick={() => setTimeout(() => checkIfHome(3), 800)} ><Link className="link2" to="/">Work</Link></NavbarItems>
+        <NavbarItems><Link className="link2" to="/resume/">Resume</Link></NavbarItems>
+        <NavbarItems><Link className="link2" to="/contact/">Contact</Link></NavbarItems>
       </Line>
       <ButtonContainer onClick={() => goDown(860)}>
         <ButtonDown src={chevdown} alt="buttondown"/>
