@@ -188,15 +188,12 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     if (num === 0) {
       window[`scrollTo`]({ top: 0, behavior: `smooth` })
     } else if (num === 1) {
-      console.log(document.getElementsByClassName('down-one')[0])
       document.getElementsByClassName('down-one')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
       return;
     } else if (num === 2) {
-      console.log(document.getElementsByClassName('down-two')[0])
       document.getElementsByClassName('down-two')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
       return;
     } else if (num === 3) {
-      console.log(document.getElementsByClassName('down-three')[0])
       document.getElementsByClassName('down-three')[0].scrollIntoView({ behavior: `smooth`, block: `center` })
       return;
     }

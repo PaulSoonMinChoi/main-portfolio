@@ -184,9 +184,9 @@ const Header = ({ siteTitle, subTitle }) => {
       <HeaderDiv>
         <h1 style={{ margin: 0 }}>
           <TitleContainer >
-            {titleArr.map((char) => {
+            {titleArr.map((char, index) => {
               return (
-                <CharDiv>
+                <CharDiv key={index}>
                   <Char className='title-char' data-effect="solid" data-tip="Problem solver">{char}</Char>
                 </CharDiv>
               )
