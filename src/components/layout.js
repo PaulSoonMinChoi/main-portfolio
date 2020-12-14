@@ -16,6 +16,8 @@ import GatsbyLogo from '../images/gatsby.svg'
 import chevup from '../images/chevup.svg'
 import chevdown from '../images/chevdown.svg'
 
+import { useMediaQuery } from 'react-responsive'
+
 library.add(fab);
 
 const animationFrames = keyframes`
@@ -72,8 +74,8 @@ const Line = styled.div`
   @media (max-width: 900px) {
     margin: 0 0 8em 0;
     flex-direction: row;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-    border-top: 1px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgb(231 231 231 / 50%);
+    border-top: 1px solid rgb(231 231 231 / 50%);
     height: 10vh;
     background-position: center;
 
@@ -185,16 +187,24 @@ const Layout = ({ children, siteTitle, subTitle }) => {
   }
 
   const goDown = (num) => {
+    let area = '';
+
+    if (window.screen.width <= 767) {
+      area = `start`;
+    } else {
+      area = `center`;
+    }
+
     if (num === 0) {
       window[`scrollTo`]({ top: 0, behavior: `smooth` })
     } else if (num === 1) {
       document.getElementsByClassName('down-one')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
       return;
     } else if (num === 2) {
-      document.getElementsByClassName('down-two')[0].scrollIntoView({ behavior: `smooth`, block: `center`  })
+      document.getElementsByClassName('down-two')[0].scrollIntoView({ behavior: `smooth`, block: area  })
       return;
     } else if (num === 3) {
-      document.getElementsByClassName('down-three')[0].scrollIntoView({ behavior: `smooth`, block: `center` })
+      document.getElementsByClassName('down-three')[0].scrollIntoView({ behavior: `smooth`, block: area })
       return;
     }
   }
@@ -205,6 +215,7 @@ const Layout = ({ children, siteTitle, subTitle }) => {
 
   const checkIfHome = (num) => {
     if (atHome) {
+
       goDown(num)
     }
   }

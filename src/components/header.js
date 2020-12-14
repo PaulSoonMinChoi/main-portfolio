@@ -39,7 +39,7 @@ const MainHeader = styled.header`
 const HeaderDiv = styled.div`
   margin: 0 auto;
   maxWidth: 960;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +61,7 @@ const TitleContainer = styled.div`
   align-items: center;
   gap: 10px;
   animation: ${animationFrames} 2s ease;
+  padding-left: 10px;
   @media (max-width: 375px) {
     flex-wrap: wrap;
     width: 375px;

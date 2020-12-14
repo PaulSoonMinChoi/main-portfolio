@@ -189,7 +189,7 @@ const SkillContainer = styled.div`
 
 const Skills = ({useOnScreen}) => {
 
-  const [ref, visible] = useOnScreen({ threshold: 0.3 });
+  const [ref, visible] = useOnScreen({ threshold: 0.1 });
 
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
@@ -201,8 +201,8 @@ const Skills = ({useOnScreen}) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible} className="down-two" >
-      <Title><Span>Skills</Span></Title>
+    <MainContainer ref={ref} active={visible} >
+      <Title><Span className="down-two">Skills</Span></Title>
       <AboutUsContentContainer>
         <SkillsSectionContainer>
           <SkillsSection>

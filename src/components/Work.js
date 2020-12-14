@@ -123,8 +123,8 @@ const Work = ({useOnScreen}) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible} className="down-three" >
-      <Title><Span>Work</Span></Title>
+    <MainContainer ref={ref} active={visible} >
+      <Title><Span className="down-three">Work</Span></Title>
       <WorkList>
         <MainWorkContainer>
           <Img src={BluLogo} alt="BluLogo"/>

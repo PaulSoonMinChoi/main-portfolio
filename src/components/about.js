@@ -87,7 +87,7 @@ const Span = styled.span`
 
 const AboutUs = ({useOnScreen}) => {
 
-  const [ref, visible] = useOnScreen({ threshold: 0.3 });
+  const [ref, visible] = useOnScreen({ threshold: 0.2 });
 
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
