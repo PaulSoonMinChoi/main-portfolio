@@ -16,8 +16,6 @@ import GatsbyLogo from '../images/gatsby.svg'
 import chevup from '../images/chevup.svg'
 import chevdown from '../images/chevdown.svg'
 
-import { useMediaQuery } from 'react-responsive'
-
 library.add(fab);
 
 const animationFrames = keyframes`

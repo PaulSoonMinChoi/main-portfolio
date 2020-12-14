@@ -6,10 +6,6 @@ import AboutUs from "../components/about"
 import Skills from "../components/skills"
 import Work from "../components/Work"
 
-import DesktopBreakpoint from '../responsive-utils/desktop-breakpoint';
-import TabletBreakpoint from '../responsive-utils/tablet-breakpoint';
-import PhoneBreakpoint from '../responsive-utils/phone-breakpoint';
-
 function useOnScreen(options) {
   const ref = useRef();
   const [visible, setVisible] = useState(false);
