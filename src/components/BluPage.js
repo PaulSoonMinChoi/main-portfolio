@@ -92,13 +92,13 @@ const BluPage = () => (
     </SectionDiv>
     <SectionDiv>
       <BoldContent>Small Summary: </BoldContent>
-      <Paragraph>To start we had to figure out how we can help gamers find friends faster. Few questions that arose during the daily stand-ups:  "How can people use our app and benifit from using it?" "Will our app solve the problem of helping gamers find friends to play with, with ease?" Next, the planning was tough since we had too many features we wanted to implement in so little time. Therefore, me and 2 other engineers built out a blue print of what the following application will contain. This included the modules for each section and how each page will correspond to each other. In addition, we needed to figure out what database management system to use as well as the schema structure. Then came the part of designing a mock-up of what the application would look like. Daily stand-ups were a must in order to keep the whole team up to date. Some features included allowed user's to search and add friends, search games through a list or through the search bar, and start up a call with your created lobby of friends.</Paragraph>
+      <Paragraph>To start I had to figure out how I can help gamers find friends faster. Few questions that arose during the daily stand-ups:  "How can people use our app and benifit from using it?" "Will our app solve the problem of helping gamers find friends to play with, with ease?" Next, the planning was tough since I had too many features I wanted to implement in so little time. Therefore, I had to built out a blue print of what the following application will contain. This included the modules for each section and how each page will correspond to each other. In addition, I needed to figure out what database management system to use as well as the schema structure. Then came the part of designing a mock-up of what the application would look like. Daily stand-ups were a must in order to keep the whole team up to date. Some features included allowed user's to search and add friends, search games through a list or through the search bar, and start up a call with your created lobby of friends.</Paragraph>
       <SectionDiv>
         <Img src={bluapp2} alt="bluapp2" />
         <CommentArea>Popular Games Search List.</CommentArea>
       </SectionDiv>
-      <Paragraph>With struggles and time constraints we were able to produce a simple mock up of a game application within a week!</Paragraph>
-      <CommentSection>We are currently still working on Blu and looking to launch in the near future!</CommentSection>
+      <Paragraph>With struggles and time constraints I were able to produce a simple mock up of a game application within a week!</Paragraph>
+      <CommentSection>I am currently still working on Blu and looking to launch in the near future!</CommentSection>
     </SectionDiv>
   </>
 )
