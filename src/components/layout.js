@@ -204,6 +204,8 @@ const Layout = ({ children, siteTitle, subTitle }) => {
     } else if (num === 3) {
       document.getElementsByClassName('down-three')[0].scrollIntoView({ behavior: `smooth`, block: area })
       return;
+    } else {
+      window[`scrollTo`]({ top: num, behavior: `smooth` })
     }
   }
 
