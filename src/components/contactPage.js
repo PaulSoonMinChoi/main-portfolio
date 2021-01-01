@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
+import './contactPage.css'
 
 const Div = styled.div`
   display: flex;
@@ -44,6 +45,7 @@ const SectionDiv = styled.div`
 
 const FlexDiv = styled(SectionDiv)`
   display: flex;
+  gap: 50px;
 
   @media (max-width: 375px) {
     flex-direction: column;
@@ -99,22 +101,68 @@ const Button = styled.button`
   }
 `;
 
-const FECPage = () => (
+const FormGroup = styled.div`
+  position: relative;
+  padding: 15px 0 0;
+  width: 100%;
+`;
+
+const FormInput = styled.input`
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: ${(props) => props.used ? `2px solid red;` : `2px solid #9b9b9b;`};
+  outline: 0;
+  font-size: 1rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-top: 10px;
+  &:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #7FA7F4, #63eb97);
+    border-image-slice: 1;
+  }
+`;
+
+const FormLabel = styled.label`
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #b2b2b2;
+`;
+
+const Form = styled.form`
+  width: 100%;
+`;
+
+
+const contactPage = () => (
   <>
     <SectionDiv>
       <ColumnDiv>
       <BoldContent>Send me a direct message with this form!</BoldContent>
-      <form action="https://formspree.io/f/xnqobbea" method="POST">
+      <Form action="https://formspree.io/f/xnqobbea" method="POST">
         <FlexDiv>
-          <Div2>
-            <Input type="text" name="name" placeholder="name"></Input>
-          </Div2>
-          <Div2>
-            <Input type="text" name="email" placeholder="email"></Input>
-          </Div2>
+          <FormGroup >
+            <FormInput type="input" className="form__field" placeholder="name" name="name" required />
+            <FormLabel htmlFor="name" className="form__label">name</FormLabel>
+          </FormGroup>
+          <FormGroup >
+            <FormInput type="input" className="form__field" placeholder="email" name="email" required />
+            <FormLabel htmlFor="email" className="form__label">email</FormLabel>
+          </FormGroup>
         </FlexDiv>
         <Div>
-          <Input type="text" name="subject" placeholder="subject"></Input>
+          <FormGroup >
+            <FormInput type="input" className="form__field" placeholder="subject" name="subject" required />
+            <FormLabel htmlFor="subject" className="form__label">subject</FormLabel>
+          </FormGroup>
         </Div>
         <Div>
           <TextArea type="text" name="message" placeholder="message"></TextArea>
@@ -122,10 +170,10 @@ const FECPage = () => (
         <Div>
           <Button type='submit'>Send</Button>
         </Div>
-      </form>
+      </Form>
       </ColumnDiv>
     </SectionDiv>
   </>
 )
 
-export default FECPage
+export default contactPage;

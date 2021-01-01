@@ -163,6 +163,7 @@ const Logo = styled.img`
 const SkillContainer = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
