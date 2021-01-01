@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
-import bluapp from '../images/bluapp.png'
-import bluapp2 from '../images/bluapp2.png'
+import bluapp from '../images/bluapp.jpg'
+import bluapp2 from '../images/bluapp2.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
