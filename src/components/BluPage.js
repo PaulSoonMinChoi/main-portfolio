@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components"
 import bluapp from '../images/bluapp.jpg'
 import bluapp2 from '../images/bluapp2.jpg'
+import bluVid from '../images/gifs/bluvid.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -39,6 +40,13 @@ const SectionDiv = styled.div`
   margin-bottom: 50px;
 `;
 
+const AlignedDiv = styled(SectionDiv)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 const FlexDiv = styled(SectionDiv)`
   display: flex;
 `;
@@ -63,10 +71,14 @@ const Icon = styled.a`
 
 const BluPage = () => (
   <>
-    <SectionDiv>
+    <AlignedDiv>
+    <video width="1000px" height="700px" autoPlay loop muted>
+      <source src={bluVid} type="video/mp4" />
+    </video>
+    <CommentArea>Current Video demo of Blu!</CommentArea>
       <Img src={bluapp} alt="bluapp" />
       <CommentArea>Home page of Blu.</CommentArea>
-    </SectionDiv>
+    </AlignedDiv>
     <br></br>
     <SectionDiv>
       <BoldContent>Tech Stacks: </BoldContent>
