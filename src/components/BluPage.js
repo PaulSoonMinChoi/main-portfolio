@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from "styled-components"
-import bluapp from '../images/bluapp.jpg'
-import bluapp2 from '../images/bluapp2.jpg'
-import bluVid from '../images/gifs/bluvid.mp4'
+import blulanding from '../images/blulanding.png'
+import bluhome from '../images/bluhome.png'
+import bluteams from '../images/bluteams.png'
+import bluleaderboards from '../images/bluleaderboards.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -11,7 +12,6 @@ library.add(fab);
 
 
 const Img = styled.img`
-  border: 4px solid rgb(235, 235, 235);
   border-radius: 5px;
 `;
 
@@ -72,11 +72,7 @@ const Icon = styled.a`
 const BluPage = () => (
   <>
     <AlignedDiv>
-    <video width="1000px" height="700px" autoPlay loop muted>
-      <source src={bluVid} type="video/mp4" />
-    </video>
-    <CommentArea>Current Video demo of Blu!</CommentArea>
-      <Img src={bluapp} alt="bluapp" />
+      <Img src={blulanding} alt="blulanding" />
       <CommentArea>Home page of Blu.</CommentArea>
     </AlignedDiv>
     <br></br>
@@ -104,15 +100,23 @@ const BluPage = () => (
     </SectionDiv>
     <SectionDiv>
       <BoldContent>Small Summary: </BoldContent>
-      <Paragraph>To start I had to figure out how I can help gamers find friends faster. Few questions that arose during the daily stand-ups:  "How can people use our app and benifit from using it?" "Will our app solve the problem of helping gamers find friends to play with, with ease?" Next, the planning was tough since I had too many features I wanted to implement in so little time. Therefore, I had to built out a blue print of what the following application will contain. This included the modules for each section and how each page will correspond to each other. In addition, I needed to figure out what database management system to use as well as the schema structure. Then came the part of designing a mock-up of what the application would look like. Daily stand-ups were a must in order to keep the whole team up to date. Some features included allowed user's to search and add friends, search games through a list or through the search bar, and start up a call with your created lobby of friends.</Paragraph>
+      <Paragraph>For starters, Blu is a personal application for Valorant players to form teams and compete against each other for ranking. Being a Valorant player myself, I became very stagnant on the current ranking system and wanted to mimic the feel of a Esports Tournament or league for the average player.  Working on Blu included making a slick UI, using Riot's API for player data, and creating a ranking system to give users something to achieve.</Paragraph>
       <SectionDiv>
-        <Img src={bluapp2} alt="bluapp2" />
-        <CommentArea>Popular Games Search List.</CommentArea>
+        <Img src={bluhome} alt="bluhome" />
+        <CommentArea>Home Page of Blu.</CommentArea>
       </SectionDiv>
-      <Paragraph>With struggles and time constraints I were able to produce a simple mock up of a game application within a week!</Paragraph>
+      <SectionDiv>
+        <Img src={bluteams} alt="bluteams" />
+        <CommentArea>Explore Page of Blu (Teams)</CommentArea>
+      </SectionDiv>
+      <SectionDiv>
+        <Img src={bluleaderboards} alt="bluleaderboards" />
+        <CommentArea>Explore Page of Blu (leaderboards)</CommentArea>
+      </SectionDiv>
+      <Paragraph>Blu is still under development! If you have any questions about the application feel free to reach out to me!</Paragraph>
       <CommentSection>I am currently still working on Blu and looking to launch in the near future!</CommentSection>
     </SectionDiv>
   </>
 )
 
-export default BluPage
+export default BluPage;
