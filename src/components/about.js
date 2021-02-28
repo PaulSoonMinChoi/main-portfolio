@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { keyframes} from "styled-components"
-import { Link } from 'gatsby'
+import React from "react"
+import styled, { keyframes } from "styled-components"
+import { Link } from "gatsby"
 
 const animationFrames2 = keyframes`
   0% {
@@ -11,7 +11,7 @@ const animationFrames2 = keyframes`
     opacity:1;
     transform:  translate(0px,0px)  ;
   }
-`;
+`
 
 const MainContainer = styled.div`
   display: flex;
@@ -19,10 +19,10 @@ const MainContainer = styled.div`
   gap: 250px;
   height: 80vh;
   align-items: center;
-  transition: transform 2s ease-in-out,opacity 1s ease-in-out;
-  opacity: ${(props) => props.active ? '1' : `0`};
+  transition: transform 2s ease-in-out, opacity 1s ease-in-out;
+  opacity: ${props => (props.active ? "1" : `0`)};
 
-  @media (max-width: 1000px)  {
+  @media (max-width: 1000px) {
     flex-direction: column;
     height: 80vh;
     gap: 50px;
@@ -38,11 +38,10 @@ const MainContainer = styled.div`
     margin-bottom: 200px;
   }
 
-
   @media (max-width: 540px) {
     margin-bottom: 400px;
   }
-`;
+`
 
 const Title = styled.h1`
   color: rgb(30, 97, 97);
@@ -61,62 +60,71 @@ const Title = styled.h1`
     width: 60%;
     margin-bottom: 40px;
   }
-`;
+`
 
 const AboutUsContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 800px;
-`;
+`
 
 const AboutUsIntro = styled.h3`
   color: rgb(78 237 237);
   line-height: 40px;
-`;
+`
 
 const Paragraph = styled.p`
   line-height: 40px;
-`;
+`
 
 const Span = styled.span`
   background: #000;
   padding: 0 10px;
   color: rgb(78 237 237);
-`;
+`
 
-const AboutUs = ({useOnScreen}) => {
+const AboutUs = ({ useOnScreen }) => {
+  const [ref, visible] = useOnScreen({ threshold: 0.2 })
 
-  const [ref, visible] = useOnScreen({ threshold: 0.2 });
-
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false)
   React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    setHasMounted(true)
+  }, [])
   if (!hasMounted) {
-    return null;
+    return null
   }
 
   return (
     <MainContainer ref={ref} active={visible} className="down-one">
-      <Title><Span>About</Span></Title>
+      <Title>
+        <Span>About</Span>
+      </Title>
       <AboutUsContentContainer>
         {/* <Img src={Paul} alt="paulchoi" /> */}
         <AboutUsIntro>
-          Hi. I'm Paul, a full stack software engineer living in California. I bring innovative ideas to life with design and code.
+          Hi. I'm Paul, a full stack software engineer living in California. I
+          bring innovative ideas to life with design and code.
         </AboutUsIntro>
         <Paragraph>
-          In my work I strive to bring real change and joy while maintaining usability and structure.
+          In my work I strive to bring real change and joy while maintaining
+          usability and structure.
         </Paragraph>
         <Paragraph>
-          Currently I'm looking for a full time software engineering based role. In addition I am working on
-          a side project called <Link style={{color: 'rgb(78 237 237)', fontWeight: 'bold'}} to="/blu">Blu</Link> which allows gamers to connect with other
-          gamers for better online multiplayer experiences.
+          Currently I'm looking for a full time software engineering based role.
+          In addition I am working on a side project called{" "}
+          <Link
+            style={{ color: "rgb(78 237 237)", fontWeight: "bold" }}
+            to="/blu"
+          >
+            Blu
+          </Link>{" "}
+          which allows Valorant players to form teams and compete against each
+          other for ranking.
         </Paragraph>
       </AboutUsContentContainer>
     </MainContainer>
   )
 }
 
-export default AboutUs;
-
+export default AboutUs
