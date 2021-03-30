@@ -44,11 +44,7 @@ const MainContainer = styled.div`
 `
 
 const Title = styled.h1`
-  color: rgb(30, 97, 97);
-  width: 30%;
-  text-align: center;
-  border-bottom: 1px solid rgb(231 231 231 / 50%);
-  line-height: 0.1em;
+  color: rgb(78 237 237);
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
@@ -103,12 +99,6 @@ const Img2 = styled(Img)`
   height: 165px;
 `
 
-const Span = styled.span`
-  background: #000;
-  padding: 0 10px;
-  color: rgb(78 237 237);
-`
-
 const Work = ({ useOnScreen }) => {
   const [ref, visible] = useOnScreen({ threshold: 0.3 })
 
@@ -122,9 +112,7 @@ const Work = ({ useOnScreen }) => {
 
   return (
     <MainContainer ref={ref} active={visible}>
-      <Title>
-        <Span className="down-three">Work</Span>
-      </Title>
+      <Title>Work</Title>
       <WorkList>
         <MainWorkContainer>
           <Img src={BluLogo} alt="BluLogo" />

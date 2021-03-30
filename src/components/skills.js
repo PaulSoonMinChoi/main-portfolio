@@ -78,8 +78,6 @@ const MainContainer = styled.div`
 
 const Title = styled.h1`
   color: rgb(78 237 237);
-  width: 30%;
-  text-align: center;
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
@@ -98,6 +96,10 @@ const AboutUsContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 800px;
+
+  @media (max-width: 1000px) {
+    width: auto;
+  }
 `
 
 const SkillsSectionContainer = styled.div`

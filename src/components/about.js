@@ -44,11 +44,7 @@ const MainContainer = styled.div`
 `
 
 const Title = styled.h1`
-  color: rgb(30, 97, 97);
-  width: 30%;
-  text-align: center;
-  border-bottom: 1px solid rgb(231 231 231 / 50%);
-  line-height: 0.1em;
+  color: rgb(78 237 237);
   margin: 10px 0 20px;
   animation: ${animationFrames2} 2s ease;
   letter-spacing: 5px;
@@ -78,12 +74,6 @@ const Paragraph = styled.p`
   line-height: 40px;
 `
 
-const Span = styled.span`
-  background: #000;
-  padding: 0 10px;
-  color: rgb(78 237 237);
-`
-
 const AboutUs = ({ useOnScreen }) => {
   const [ref, visible] = useOnScreen({ threshold: 0.2 })
 
@@ -97,9 +87,7 @@ const AboutUs = ({ useOnScreen }) => {
 
   return (
     <MainContainer ref={ref} active={visible} className="down-one">
-      <Title>
-        <Span>About</Span>
-      </Title>
+      <Title>About</Title>
       <AboutUsContentContainer>
         {/* <Img src={Paul} alt="paulchoi" /> */}
         <AboutUsIntro>
