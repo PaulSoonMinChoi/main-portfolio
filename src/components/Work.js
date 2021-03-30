@@ -1,10 +1,9 @@
-import React from 'react';
-import './Work.css'
+import React from "react"
+import "./Work.css"
 import styled, { keyframes } from "styled-components"
-import { Link } from 'gatsby'
-import BluLogo from '../images/blulogo.png'
-import GitHub from '../images/github2.svg'
-
+import { Link } from "gatsby"
+import BluLogo from "../images/blulogo.png"
+import GitHub from "../images/github2.svg"
 
 const animationFrames2 = keyframes`
   0% {
@@ -15,7 +14,7 @@ const animationFrames2 = keyframes`
     opacity:1;
     transform:  translate(0px,0px)  ;
   }
-`;
+`
 
 const MainContainer = styled.div`
   display: flex;
@@ -23,8 +22,8 @@ const MainContainer = styled.div`
   gap: 250px;
   height: 160vh;
   align-items: center;
-  transition: transform 2s ease-in-out,opacity 1s ease-in-out;
-  opacity: ${(props) => props.active ? '1' : `0`};
+  transition: transform 2s ease-in-out, opacity 1s ease-in-out;
+  opacity: ${props => (props.active ? "1" : `0`)};
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -42,7 +41,7 @@ const MainContainer = styled.div`
     height: 245vh;
     margin: 0;
   }
-`;
+`
 
 const Title = styled.h1`
   color: rgb(30, 97, 97);
@@ -61,7 +60,7 @@ const Title = styled.h1`
     width: 60%;
     margin-bottom: 40px;
   }
-`;
+`
 
 const MainWorkContainer = styled.div`
   display: flex;
@@ -71,95 +70,101 @@ const MainWorkContainer = styled.div`
   @media (max-width: 375px) {
     flex-direction: column;
   }
-`;
+`
 
 const WorkContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 800px;
-`;
+`
 
 const AppTitle = styled.h3`
   color: rgb(78 237 237);
-`;
+`
 
 const OneLiner = styled.p`
   line-height: 40px;
-`;
+`
 
 const WorkList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-`;
+`
 
 const Img = styled.img`
   border-radius: 50%;
   height: 140px;
   width: 140px;
-`;
+`
 
 const Img2 = styled(Img)`
   height: 165px;
-`;
+`
 
 const Span = styled.span`
   background: #000;
   padding: 0 10px;
   color: rgb(78 237 237);
-`;
+`
 
-const Work = ({useOnScreen}) => {
+const Work = ({ useOnScreen }) => {
+  const [ref, visible] = useOnScreen({ threshold: 0.3 })
 
-  const [ref, visible] = useOnScreen({ threshold: 0.3 });
-
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false)
   React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    setHasMounted(true)
+  }, [])
   if (!hasMounted) {
-    return null;
+    return null
   }
 
   return (
-    <MainContainer ref={ref} active={visible} >
-      <Title><Span className="down-three">Work</Span></Title>
+    <MainContainer ref={ref} active={visible}>
+      <Title>
+        <Span className="down-three">Work</Span>
+      </Title>
       <WorkList>
         <MainWorkContainer>
-          <Img src={BluLogo} alt="BluLogo"/>
+          <Img src={BluLogo} alt="BluLogo" />
           <WorkContainer>
-            <AppTitle>
-              Blu
-            </AppTitle>
+            <AppTitle>Blu</AppTitle>
             <OneLiner>
-              App that allows gamers to connect with other gamers for better online multiplayer experiences.
+              App that allows gamers to connect with other gamers for better
+              online multiplayer experiences.
             </OneLiner>
-            <Link className="link" to="/blu/">Read More</Link>
+            <Link className="link" to="/blu/">
+              Read More
+            </Link>
           </WorkContainer>
         </MainWorkContainer>
         <MainWorkContainer>
-          <Img2 src={GitHub} alt="BluLogo"/>
+          <Img2 src={GitHub} alt="BluLogo" />
           <WorkContainer>
-            <AppTitle>
-              Getsy, Etsy E-Commerce Clone
-            </AppTitle>
+            <AppTitle>Getsy, Etsy E-Commerce Clone</AppTitle>
             <OneLiner>
-              Single page application of display product page of a popular e-commerce website.
+              Single page application of display product page of a popular
+              e-commerce website.
             </OneLiner>
-            <Link className="link" to="/FEC/">Read More</Link>
+            <Link className="link" to="/FEC/">
+              Read More
+            </Link>
           </WorkContainer>
         </MainWorkContainer>
         <MainWorkContainer>
-          <Img2 src={GitHub} alt="BluLogo"/>
+          <Img2 src={GitHub} alt="BluLogo" />
           <WorkContainer>
-            <AppTitle>
-              System Design & Scaling
-            </AppTitle>
+            <AppTitle>System Design & Scaling</AppTitle>
             <OneLiner>
-              Scaling a legacy code base to optimize query times, deploy app onto aws, horizontally scale, benchmark rps (request per seconds), optimize, load-balance, cache, and handle production level traffic of 10,000 clients per second.
+              Scaling a legacy code base to optimize query times, deploy app
+              onto aws, horizontally scale, benchmark rps (request per seconds),
+              optimize, load-balance, cache, and handle production level traffic
+              of 10,000 clients per second.
             </OneLiner>
-            <Link className="link" to="/SDC/">Read More</Link>
+            <Link className="link" to="/SDC/">
+              Read More
+            </Link>
           </WorkContainer>
         </MainWorkContainer>
       </WorkList>
@@ -167,5 +172,4 @@ const Work = ({useOnScreen}) => {
   )
 }
 
-export default Work;
-
+export default Work
