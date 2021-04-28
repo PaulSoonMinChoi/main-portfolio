@@ -111,7 +111,7 @@ const Work = ({ useOnScreen }) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible}>
+    <MainContainer ref={ref} active={visible} className="down-three">
       <Title>Work</Title>
       <WorkList>
         <MainWorkContainer>

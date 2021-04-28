@@ -11,6 +11,7 @@ import aws from "../images/aws.svg"
 import git from "../images/git.svg"
 import webpack from "../images/webpack.svg"
 import babel from "../images/babel.svg"
+import mongoDB from "../images/mongodb.svg"
 
 const animationFrames2 = keyframes`
   0% {
@@ -180,7 +181,7 @@ const Skills = ({ useOnScreen }) => {
   }
 
   return (
-    <MainContainer ref={ref} active={visible}>
+    <MainContainer ref={ref} active={visible} className="down-two">
       <Title>Skills</Title>
       <AboutUsContentContainer>
         <SkillsSectionContainer>
@@ -224,16 +225,9 @@ const Skills = ({ useOnScreen }) => {
                 <Logo src={mysql} alt="mySQL" />
                 <SkillsEntry>mySQL</SkillsEntry>
               </SkillContainer>
-            </SkillsList>
-          </SkillsSection>
-          <SkillsSection>
-            <div>
-              <SkillsTitle>Deployment:</SkillsTitle>
-            </div>
-            <SkillsList>
               <SkillContainer>
-                <Logo src={aws} alt="AWS" />
-                <SkillsEntry>AWS</SkillsEntry>
+                <Logo src={mongoDB} alt="mongoDB" />
+                <SkillsEntry>MongoDB</SkillsEntry>
               </SkillContainer>
             </SkillsList>
           </SkillsSection>
@@ -253,6 +247,10 @@ const Skills = ({ useOnScreen }) => {
               <SkillContainer>
                 <Logo src={babel} alt="Babel" />
                 <SkillsEntry>Babel</SkillsEntry>
+              </SkillContainer>
+              <SkillContainer>
+                <Logo src={aws} alt="AWS" />
+                <SkillsEntry>AWS</SkillsEntry>
               </SkillContainer>
             </SkillsList>
           </SkillsSection>
