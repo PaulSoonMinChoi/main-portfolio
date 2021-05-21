@@ -91,24 +91,25 @@ const AboutUs = ({ useOnScreen }) => {
       <AboutUsContentContainer>
         {/* <Img src={Paul} alt="paulchoi" /> */}
         <AboutUsIntro>
-          Hi. I'm Paul, a full stack software engineer living in California. I
-          bring innovative ideas to life with design and code.
+          Hi. I'm Paul, a full-stack software engineer more focused on the
+          frontend, living in California. I bring innovative ideas to life with
+          design and code.
         </AboutUsIntro>
         <Paragraph>
-          In my work I strive to bring real change and joy while maintaining
-          usability and structure.
+          In my work, I strive to bring real change and joy while maintaining
+          usability and structure. Nobody wants messy and redudant code right?
         </Paragraph>
         <Paragraph>
-          Currently I'm looking for a full time software engineering based role.
-          In addition I am working on a side project called{" "}
-          <Link
+          Currently, I'm looking for a full-time software engineering-based
+          role. In addition, I am working on a volunteer project for Hack For La
+          called{" "}
+          <a
             style={{ color: "rgb(78 237 237)", fontWeight: "bold" }}
-            to="/blu"
+            href="https://github.com/hackforla/calendaring-service-fe"
+            target="_blank"
           >
-            Blu
-          </Link>{" "}
-          which allows Valorant players to form teams and compete against each
-          other for ranking.
+            Home Unite Us.
+          </a>{" "}
         </Paragraph>
       </AboutUsContentContainer>
     </MainContainer>

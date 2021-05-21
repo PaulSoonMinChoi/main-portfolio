@@ -119,8 +119,8 @@ const Work = ({ useOnScreen }) => {
           <WorkContainer>
             <AppTitle>Blu</AppTitle>
             <OneLiner>
-              App that allows gamers to connect with other gamers for better
-              online multiplayer experiences.
+              App that allows Valorant players to form teams and compete against
+              each other for ranking.
             </OneLiner>
             <Link className="link" to="/blu/">
               Read More
